@@ -1,0 +1,50 @@
+SCS Website - Version 2 Changes
+Date: 2026-04-01
+
+Summary
+This document records the latest content and details updated in Version 2.
+
+1. Home Page
+- Updated Clients count.
+- Updated Experience/Years value.
+
+2. Footer
+- Updated social media links (except LinkedIn).
+- Updated Contact Us section:
+  - Location updated to Hyderabad.
+  - Email updated.
+
+3. About Section
+- Updated Clients count.
+- Updated Experience/Years value.
+- Updated rating from 4.9 to 4.8.
+- Founder profile updates:
+  - Changed wording from fertility psychology to fertility counselling.
+  - Removed "Hegde" references where applicable.
+- Professional Credentials updates:
+  - Removed "Hegde" in credentials.
+  - Reordered education details.
+- Updated "Our Journey" details.
+- Updated the "About our Founder" image.
+
+4. Services Section
+- No changes.
+
+5. Blog Section
+- No changes.
+
+6. Testimonials Section
+- Updated Clients count.
+- Updated Experience/Years value.
+- Updated rating from 4.9 to 4.8.
+- Removed 3 testimonials.
+
+7. Contact Section
+- Updated complete contact details:
+  - Call details.
+  - Email details.
+  - Visit Us/location details.
+  - Office hours details.
+  - Immediate support number.
+
+Total files changed in this Version 2 update: 7

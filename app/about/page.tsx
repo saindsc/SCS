@@ -89,10 +89,10 @@ const credentials = [
   { 
     category: 'Education & Degrees', 
     items: [
-      'M.A. in Psychology (2017-2019)',
       'Ph.D. in Psychology (Pursuing, 2023-Present)',
-      'PG Diploma in Family & Marriage Counseling (2022-2023)',
-      'PG Diploma in Early Childhood Intervention (2024-2025)'
+      'PGDM in Family & Marriage Counseling (2022-2023)',
+      'PGDM in Early Childhood Intervention (2024-2025)',
+      'M.A. in Psychology (2017-2019)'
     ] 
   },
   { 
@@ -109,7 +109,7 @@ const credentials = [
   { 
     category: 'Professional Credentials & Leadership', 
     items: [
-      'Registered Psychological Counselor, ART Bank, Hegde Fertility',
+      'Registered Psychological Counselor, ART Bank',
       'General Secretary, Telangana Psychologists Association (2025-Present)',
       'Vice-President, TPA (2023-2025)',
       'Inspiring Women Psychologist Award (2025)',
@@ -121,7 +121,7 @@ const credentials = [
 const timeline = [
   { year: '2015-2017', event: 'Completed M.A. in Psychology with distinction' },
   { year: '2017-2019', event: 'Sports Psychology specialist at KOOH Sports, Hyderabad' },
-  { year: '2019-Present', event: 'Lead Psychologist at Hegde Fertility Hospital' },
+  { year: '2019-Present', event: 'Lead Psychologist at Fertility Center' },
   { year: '2022-2023', event: 'Advanced certifications in CBT, Gestalt Therapy, and Anxiety Disorders' },
   { year: '2023-Present', event: 'Pursuing Ph.D. in Psychology & Leadership roles in TPA' },
   { year: '2025', event: 'Awarded Inspiring Women Psychologist Award' },
@@ -155,7 +155,7 @@ export default function AboutPage() {
 
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Saheeli Counselling is dedicated to providing specialized, compassionate, 
-              evidence-based mental health care with expertise in fertility psychology and family wellness.
+              evidence-based mental health care with expertise in fertility Counselling and family wellness.
             </p>
           </motion.div>
         </div>
@@ -182,7 +182,7 @@ export default function AboutPage() {
 
               <p className="text-lg text-gray-600 leading-relaxed">
                 Saheeli Counselling is founded on the vision of providing specialized mental health support 
-                with deep expertise in fertility psychology, family counseling, and wellness. Our approach 
+                with deep expertise in fertility Counselling, family counseling, and wellness. Our approach 
                 combines compassionate care with evidence-based therapeutic practices.
               </p>
 
@@ -225,21 +225,21 @@ export default function AboutPage() {
                   <div className="flex items-center space-x-4 p-4 bg-white/20 rounded-xl backdrop-blur-sm">
                     <Users className="h-8 w-8" />
                     <div>
-                      <div className="text-3xl font-bold">500+</div>
+                      <div className="text-3xl font-bold">1000+</div>
                       <div className="text-sm">Happy Clients</div>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4 p-4 bg-white/20 rounded-xl backdrop-blur-sm">
                     <Award className="h-8 w-8" />
                     <div>
-                      <div className="text-3xl font-bold">15+</div>
+                      <div className="text-3xl font-bold">8+</div>
                       <div className="text-sm">Years of Excellence</div>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4 p-4 bg-white/20 rounded-xl backdrop-blur-sm">
                     <Star className="h-8 w-8" />
                     <div>
-                      <div className="text-3xl font-bold">4.9/5</div>
+                      <div className="text-3xl font-bold">4.8/5</div>
                       <div className="text-sm">Client Satisfaction</div>
                     </div>
                   </div>
@@ -353,13 +353,15 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="relative bg-gradient-to-br from-primary-400 to-purple-400 rounded-3xl p-8 shadow-2xl h-96 flex items-center justify-center">
-                <div className="text-center space-y-4 text-white">
-                  <div className="text-7xl mb-4">👩‍⚕️</div>
-                  <p className="text-xl font-semibold">S. Sunayana</p>
-                  <p className="text-sm font-medium opacity-90">Founder & Lead Psychologist</p>
-                  <p className="text-xs opacity-75 mt-4">📷 Founder photo placeholder<br/>Upload your professional image</p>
-                </div>
+              <div className="relative rounded-3xl shadow-2xl overflow-hidden h-96">
+                <Image
+                  src="/images/SCS_pic.jpeg"
+                  alt="S. Sunayana, Founder and Lead Psychologist"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
               </div>
             </motion.div>
 
@@ -379,8 +381,8 @@ export default function AboutPage() {
               </div>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                S. Sunayana is a dedicated psychologist with specialized expertise in fertility psychology 
-                and reproductive mental health. With over 6 years of focused clinical experience at Hegde Fertility 
+                S. Sunayana is a dedicated psychologist with specialized expertise in fertility Counselling 
+                and reproductive mental health. With over 6 years of focused clinical experience in Fertility 
                 Hospital, she has supported hundreds of individuals and couples through their fertility journeys, 
                 anxiety management, and family transitions.
               </p>
@@ -401,7 +403,7 @@ export default function AboutPage() {
               <div className="space-y-3 pt-4">
                 <h3 className="font-semibold text-gray-900">Areas of Specialization:</h3>
                 <ul className="space-y-2">
-                  {['Fertility psychology & reproductive mental health', 'Couples & family counseling', 'Anxiety disorders & stress management', 'Depression & life transitions', 'Individual & group therapy'].map((item, idx) => (
+                  {['Fertility counselling & reproductive mental health', 'Couples & family counseling', 'Anxiety disorders & stress management', 'Depression & life transitions', 'Individual & group therapy'].map((item, idx) => (
                     <li key={idx} className="flex items-center space-x-3">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
                       <span className="text-gray-600">{item}</span>

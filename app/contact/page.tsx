@@ -43,23 +43,23 @@ const contactDetails = [
   {
     icon: Phone,
     title: 'Call Us',
-    value: '+1 (234) 567-890',
+    value: '+91 80082 31699',
     subtitle: 'Mon - Sat during office hours',
-    href: 'tel:+1234567890',
+    href: 'tel:+91 80082 31699',
   },
   {
     icon: Mail,
     title: 'Email Us',
-    value: 'info@scspsychology.com',
+    value: 'Saheelicounselling@gmail.com',
     subtitle: 'We reply within 24 hours',
-    href: 'mailto:info@scspsychology.com',
+    href: 'mailto:Saheelicounselling@gmail.com',
   },
   {
     icon: MapPin,
     title: 'Visit Us',
-    value: '123 Wellness Street, Mental Health District',
-    subtitle: 'City, State 12345',
-    href: 'https://maps.google.com',
+    value: 'Hyderabad, Telangana, India, 500052',
+    subtitle: 'Hyderabad, Telangana 500052',
+    href: 'https://www.google.com/maps/place/Hyderabad,+Telangana+500052/@17.3118627,78.3748778,28164m/data=!3m1!1e3!4m6!3m5!1s0x3bcbbd8396733feb:0xb6f0d002229a856e!8m2!3d17.3216709!4d78.431866!16s%2Fg%2F1hhh728zt?entry=ttu&g_ep=EgoyMDI2MDMyOS4wIKXMDSoASAFQAw%3D%3D',
   },
   {
     icon: Clock,
@@ -360,7 +360,7 @@ export default function ContactPage() {
                   className="inline-flex items-center space-x-2 text-primary-700 font-semibold hover:text-primary-800"
                 >
                   <Phone className="h-5 w-5" />
-                  <span>+1 (234) 567-890</span>
+                  <span>+91 80082 31699</span>
                 </a>
               </div>
 

@@ -64,49 +64,13 @@ const testimonials = [
     months: '3 months',
     icon: Star,
   },
-  {
-    id: 4,
-    name: 'Anonymous Parent',
-    role: 'Parent',
-    service: 'Child Counseling',
-    rating: 5,
-    quote:
-      'Our child was facing emotional outbursts and school stress. The therapist created such a safe and caring space. We’ve seen meaningful progress at home and school.',
-    improvement: 'Better emotional regulation and family harmony',
-    months: '5 months',
-    icon: Heart,
-  },
-  {
-    id: 5,
-    name: 'Karan T.',
-    role: 'Entrepreneur',
-    service: 'Emotional Resilience Training',
-    rating: 5,
-    quote:
-      'The resilience sessions changed how I handle setbacks. I’ve developed healthier thought patterns and practical strategies that help me lead with focus.',
-    improvement: 'Stronger resilience under pressure',
-    months: '4 months',
-    icon: CheckCircle,
-  },
-  {
-    id: 6,
-    name: 'Anonymous Client',
-    role: 'Healthcare Worker',
-    service: 'Grief & Loss Support',
-    rating: 5,
-    quote:
-      'I was grieving and felt completely lost. Therapy gave me a safe place to process pain and slowly heal. I am deeply grateful for the compassionate support.',
-    improvement: 'Healthier grief processing and emotional stability',
-    months: '7 months',
-    icon: Shield,
-  },
 ];
 
 const stats = [
-  { label: 'Happy Clients', value: '500+' },
-  { label: 'Average Rating', value: '4.9/5' },
+  { label: 'Happy Clients', value: '1000+' },
+  { label: 'Average Rating', value: '4.8/5' },
   { label: 'Success Stories', value: '96%' },
-  { label: 'Years of Care', value: '15+' },
+  { label: 'Years of Care', value: '8+' },
 ];
 
 export default function TestimonialsPage() {

@@ -32,8 +32,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 const services = servicesData.slice(0, 4);
 
 const stats = [
-  { value: '500+', label: 'Happy Clients', icon: Users },
-  { value: '15+', label: 'Years Experience', icon: Award },
+  { value: '1000+', label: 'Happy Clients', icon: Users },
+  { value: '8+', label: 'Years Experience', icon: Award },
   { value: '95%', label: 'Success Rate', icon: TrendingUp },
   { value: 'Online + In-Person', label: 'Flexible Sessions', icon: Clock },
 ];
