@@ -43,7 +43,7 @@ const benefits = [
   'Confidential & Safe Environment',
   'Flexible Scheduling Options',
   'Evidence-Based Approaches',
-  'Affordable Insurance-Accepted Rates',
+  // 'Affordable Insurance-Accepted Rates',
   'Online & In-Person Sessions',
 ];
 
@@ -144,10 +144,10 @@ export default function HomePage() {
                   <CheckCircle className="h-5 w-5 text-green-500" />
                   <span>100% Confidential</span>
                 </div>
-                <div className="flex items-center space-x-2 text-sm text-gray-600">
+                {/* <div className="flex items-center space-x-2 text-sm text-gray-600">
                   <CheckCircle className="h-5 w-5 text-green-500" />
                   <span>Insurance Accepted</span>
-                </div>
+                </div> */}
               </div>
             </motion.div>
 

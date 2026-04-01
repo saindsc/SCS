@@ -539,7 +539,7 @@ export default function AboutPage() {
                   'Proven track record of client success and satisfaction',
                   'Multiple therapy modalities to suit different needs',
                   'Flexible scheduling and both in-person & online options',
-                  'Insurance accepted to make care accessible',
+                  // 'Insurance accepted to make care accessible',
                 ].map((reason, idx) => (
                   <motion.div
                     key={idx}
