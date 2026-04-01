@@ -49,22 +49,22 @@ const benefits = [
 
 const testimonials = [
   {
-    name: 'Sarah Johnson',
-    role: 'Individual Therapy Client',
-    content: 'The care and attention I received helped me through one of the darkest periods of my life. Forever grateful.',
+    name: 'Riya S.',
+    role: 'Anxiety Management',
+    content: 'Constant stress and sleeplessness made me miserable. These sessions gave me practical tools and a new perspective. Now I feel calm and in control.',
     rating: 5,
   },
   {
-    name: 'Michael Chen',
-    role: 'Couples Counseling Client',
-    content: 'Our therapist helped us rediscover what brought us together. Our relationship is stronger than ever.',
-    rating: 4.5,
+    name: 'Arjun & Neha',
+    role: 'Couples Therapy',
+    content: 'We were constantly arguing and not understanding each other. Therapy taught us how to listen properly. Now our relationship is much stronger.',
+    rating: 5,
   },
   {
-    name: 'Emily Davis',
-    role: 'Anxiety Treatment Client',
-    content: 'I learned practical tools to manage my anxiety. The techniques I learned have been life-changing.',
-    rating: 3.5,
+    name: 'Priya M.',
+    role: 'Mental Health Counseling',
+    content: 'Years of stress and work burnout made me forget myself. These sessions helped me understand self-care. Now my life is balanced again.',
+    rating: 5,
   },
 ];
 
