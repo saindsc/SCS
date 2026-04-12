@@ -47,4 +47,258 @@ This document records the latest content and details updated in Version 2.
   - Office hours details.
   - Immediate support number.
 
-Total files changed in this Version 2 update: 7
+========================================
+
+BLOG FEATURE UPDATE - Version 2.1
+Date: 2026-04-12
+
+Summary
+Complete implementation of dynamic blog system with article data management, listing, and detailed post pages.
+
+1. NEW FILE: lib/blog-data.ts (991 lines)
+Purpose: Centralized blog data repository with categories and articles
+Key Components:
+- BlogPost Interface
+  - id (number)
+  - slug (string)
+  - title (string)
+  - excerpt (string)
+  - content (string)
+  - author (string)
+  - authorRole (string)
+  - date (string)
+  - readTime (string)
+  - category (string)
+  - tags (string[])
+  - image (string - supports local paths, remote URLs, or emoji)
+  - additionalImages (optional - array of image paths)
+  - featured (boolean - for featured posts display)
+
+- Blog Categories (6 categories)
+  - All
+  - Mental Health
+  - Relationships
+  - Wellness
+  - Parenting
+  - Self-Care
+
+- Blog Posts Data (6 featured articles)
+  1. Infertility and Suicide: Breaking the Silence on World Suicide Prevention Day
+     Author: Sunayana Sukka (Ph.D in Psychology)
+     Category: Mental Health
+     Read Time: 6 min read
+     Date: 2024-09-10
+     Featured: YES
+     Content: Research on infertility-linked suicide risks, Indian statistics, and importance of mental health screening during fertility treatment
+     Tags: [Infertility, Suicide Prevention, Mental Health, Psychological Support, World Suicide Prevention Day]
+
+  2. Infertility and Trauma: How Mental Health Suffers in Silence
+     Author: Dr. Sunayana Sukka (Ph.D in Psychology)
+     Category: Mental Health
+     Read Time: 7 min read
+     Date: 2025-01-20
+     Featured: YES
+     Content: Long-term psychological trauma from infertility, gender inequality in fertility issues, evidence linking trauma to infertility, and importance of psychological intervention
+     Image: /images/I&T.png
+     Tags: [Infertility, Trauma, Mental Health, Psychotherapy, Stigma]
+
+  3. Post-Pregnancy Body Image: How New Moms Can Fight Back Against Dysmorphia
+     Author: Dr. Sunayana Sukka (PhD, Psychologist)
+     Category: Wellness
+     Read Time: 7 min read
+     Date: 2024-04-25
+     Featured: YES
+     Content: Postpartum body changes, body dysmorphia definition, impact of social media, and management strategies including therapy and fitness
+     Additional Images: [/images/L1.png, /images/L3.png]
+     Primary Image: /images/L2.png
+     Tags: [Postpartum, Body Image, Body Dysmorphia, New Mothers, Therapy]
+
+  4. Does Anxiety Play a Role During Pregnancy?
+     Author: Sunayana Sukka (PhD, Psychologist)
+     Category: Mental Health
+     Read Time: 10 min read
+     Date: 2024-04-06
+     Featured: NO
+     Content: Antenatal anxiety prevalence, effects on child health, symptoms, and management strategies using CBT and lifestyle changes
+     Image: /images/L5.png
+     Tags: [Pregnancy, Antenatal Anxiety, Maternal Mental Health, CBT, Prenatal Care]
+
+  5. Coping with Grief and Loss: Understanding the Healing Journey
+     Author: S. Sunayana (Psychologist)
+     Category: Wellness
+     Read Time: 13 min read
+     Date: 2026-01-20
+     Featured: NO
+     Content: Comprehensive grief guide covering nature of grief, common reactions, types (anticipatory, complicated, disenfranchised, collective), healthy coping strategies, cultural considerations, and when to seek professional help
+     Image: 🕊️ (emoji)
+     Tags: [Grief, Loss, Healing, Mental Health, Support]
+
+  6. The Benefits of Couples Therapy: When to Seek Help and What to Expect
+     Author: S. Sunayana (Psychologist)
+     Category: Relationships
+     Read Time: 14 min read
+     Date: 2026-01-15
+     Featured: NO
+     Content: Benefits of couples therapy, common reasons to seek therapy, therapeutic approaches (EFT, Gottman Method, CBT, Imago), what to expect, and maintaining progress after therapy
+     Image: 💑 (emoji)
+     Tags: [Couples Therapy, Relationships, Marriage, Communication, Intimacy]
+
+Helper Functions:
+- getBlogPostBySlug(slug: string) - retrieve single post by slug
+- getBlogPostsByCategory(category: string) - filter posts by category
+- getFeaturedBlogPosts() - get all featured posts
+
+2. MODIFIED FILE: app/blog/page.tsx (262 lines)
+Purpose: Blog listing page with categories filtering
+Key Features:
+- Hero Section (60vh) with:
+  - Icon badge "Mental Health Resources"
+  - Main heading "Blog & Insights"
+  - Subheading about expert advice
+  - Gradient background (gray-50 to white)
+
+- Featured Posts Section:
+  - Grid layout (3 columns on desktop)
+  - Fetches from getFeaturedBlogPosts()
+  - Each card shows:
+    - Featured image (48px height)
+    - Category badge
+    - Read time
+    - Title (max 2 lines)
+    - Excerpt (max 3 lines)
+    - Publication date
+    - "Read More" link with arrow animation
+  - Hover animation effect (lift on hover)
+
+- Category Filter Section:
+  - Horizontal button layout
+  - 6 category options
+  - Selected state with gradient background
+  - Filters displayed posts in real-time
+  - Active category shown with primary color gradient
+
+- All Posts Grid Section:
+  - Responsive grid (2 columns tablet, 3 columns desktop)
+  - Displays filtered posts
+  - Same card layout as featured posts (smaller dimensions)
+  - Shows article count for selected category
+  - Empty state message when no articles found
+
+- CTA Section:
+  - Dark background (gray-900)
+  - "Ready to Start Your Journey?" heading
+  - Two buttons: "Book an Appointment" & "Explore Our Services"
+  - White and border button variants
+
+Category Filtering Logic:
+- Normalizes category selection (trim, lowercase)
+- Shows all posts when "all" category selected
+- Case-insensitive matching with post categories
+
+3. MODIFIED FILE: app/blog/[slug]/BlogPostContent.tsx (448 lines)
+Purpose: Dynamic blog post detail page with full article display
+Key Sections:
+
+A. Hero Section (70vh minimum):
+   - Gradient background (primary-500 to purple-600)
+   - Transparent black overlay
+   - Back to Blog link with arrow
+   - Category badge
+   - Main article title
+   - Meta info (publication date, read time)
+   - Author info with icon
+
+B. Featured Image Section:
+   - Rounded container (rounded-3xl)
+   - Gradient background fallback
+   - Supports local images, remote URLs
+   - Full-width responsive
+   - h-96 height with center alignment
+   - Drop shadow effect
+
+C. Additional Images Gallery:
+   - 2-column grid layout
+   - Conditional rendering (only if images exist)
+   - Each image: h-64, rounded-2xl, border
+   - Supports local/remote images or text fallback
+   - Staggered animation on load
+
+D. Article Content Section:
+   - Max width container
+   - Custom markdown-style rendering:
+     * ## Headers → h2 (font-serif, 3xl, bold, gray-900)
+     * ### Headers → h3 (font-serif, 2xl, bold, gray-900)
+     * **Bold text** → <p> (lg, bold, gray-900)
+     * List items (- prefix) → <li> (lg, gray-700)
+     * Numbered lists → <li> with list-decimal
+     * Paragraphs → <p> (lg, gray-700)
+   - Excerpt styled as intro (2xl, gray-600, border-bottom)
+
+E. Tags Section:
+   - Conditional rendering if tags exist
+   - Flex layout with Tag icon
+   - Each tag: px-4 py-2, gray-100 background
+   - Hover state: primary-100 background
+
+F. Share Section:
+   - Gradient background white to gray-50
+   - Share button functionality:
+     * Uses Navigator.share API if available
+     * Falls back to clipboard copy
+     * Alert notifications for user feedback
+   - "Found this helpful?" message
+
+G. Author Bio Section:
+   - White card on gray background
+   - User icon + author details
+   - Name, role, bio text
+   - "Meet Our Team" link with arrow
+
+H. Related Posts Section:
+   - Only shows if related posts exist
+   - Grid layout (3 columns)
+   - Same card design as blog listing
+   - Hover lift animation
+   - Shows up to 3 related articles
+
+I. CTA Section:
+   - Full-width gradient background (primary-600 to purple-700)
+   - "Ready to Take the Next Step?" heading
+   - "Book Appointment" primary button
+   - "Read More Articles" secondary button
+
+Image Rendering Logic:
+- isLocalImage() - checks if path starts with /
+- isRemoteImage() - checks if URL starts with http:// or https://
+- renderContent() - custom content parser for markdown-style formatting
+  * Splits content by newlines
+  * Trims whitespace
+  * Applies styling based on line prefix
+  * Maintains empty lines as spacing (h-4)
+
+Animation Strategy:
+- Motion components from framer-motion
+- Initial: opacity 0, y-offset animations
+- Animate: opacity 1, y-0
+- whileInView: viewport-triggered animations
+- Staggered delays for galleries
+- Hover effects on interactive elements
+
+Interface:
+- BlogPost interface imported from blog-data
+- BlogPostContentProps interface:
+  * post: BlogPost
+  * relatedPosts: BlogPost[]
+
+Total files changed in this Version 2.1 update: 3 (1 new file, 2 modified)
+New Image Assets: 5 image files + 1 directory (tracked separately)
+
+Notes:
+- Blog system is fully functional with dynamic data
+- Content supports markdown-style formatting
+- Categories are filterable and case-insensitive
+- All articles feature proper SEO with meta information
+- Responsive design across mobile, tablet, desktop
+- Animation effects enhance user experience
+- Share functionality provides social engagement
+- Author bio adds credibility to content

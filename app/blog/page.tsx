@@ -3,8 +3,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Calendar, Clock, ArrowRight, BookOpen } from 'lucide-react';
 import { blogPosts, blogCategories, getFeaturedBlogPosts } from '@/lib/blog-data';
+
+const isLocalImage = (value: string) => value.startsWith('/');
+const isRemoteImage = (value: string) => value.startsWith('http://') || value.startsWith('https://');
 
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -75,7 +79,19 @@ export default function BlogPage() {
                   <div className="h-full group cursor-pointer">
                     <div className="overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 bg-white border border-gray-100">
                       <div className="h-48 bg-gradient-to-br from-primary-400 to-primary-500 flex items-center justify-center text-6xl">
-                        {post.image}
+                        {isLocalImage(post.image) || isRemoteImage(post.image) ? (
+                          <div className="relative h-full w-full">
+                            <Image
+                              src={post.image}
+                              alt={post.title}
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 768px) 100vw, 33vw"
+                            />
+                          </div>
+                        ) : (
+                          post.image
+                        )}
                       </div>
                       <div className="p-6 space-y-4">
                         <div className="flex items-center space-x-3">
@@ -155,7 +171,19 @@ export default function BlogPage() {
                   <div className="h-full group cursor-pointer">
                     <div className="overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white border border-gray-100">
                       <div className="h-40 bg-gradient-to-br from-primary-400 to-primary-500 flex items-center justify-center text-5xl">
-                        {post.image}
+                        {isLocalImage(post.image) || isRemoteImage(post.image) ? (
+                          <div className="relative h-full w-full">
+                            <Image
+                              src={post.image}
+                              alt={post.title}
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 1024px) 100vw, 33vw"
+                            />
+                          </div>
+                        ) : (
+                          post.image
+                        )}
                       </div>
                       <div className="p-6 space-y-3">
                         <div className="flex items-center justify-between">

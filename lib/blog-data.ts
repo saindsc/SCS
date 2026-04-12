@@ -11,6 +11,7 @@ export interface BlogPost {
   category: string;
   tags: string[];
   image: string;
+  additionalImages?: string[];
   featured: boolean;
 }
 
@@ -26,743 +27,249 @@ export const blogCategories = [
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    slug: 'understanding-anxiety-disorders',
-    title: 'Understanding Anxiety Disorders: Signs, Symptoms, and Solutions',
-    excerpt: 'Learn to recognize the signs of anxiety disorders and discover effective strategies for managing symptoms and improving your mental well-being.',
-    content: `Anxiety is a normal human emotion that everyone experiences from time to time. However, when anxiety becomes overwhelming, persistent, and interferes with daily life, it may indicate an anxiety disorder.
+    slug: 'infertility-and-suicide-breaking-the-silence',
+    title: 'Infertility and Suicide: Breaking the Silence on World Suicide Prevention Day',
+    excerpt: 'Infertility is not only a medical issue. It can trigger severe emotional distress, depression, anxiety, and suicidal ideation, demanding timely psychosocial support and early mental health intervention.',
+    content: `Infertility and Suicide: On World Suicide Prevention Day
 
-## What Are Anxiety Disorders?
+Sunayana Sukka (Ph.D in Psychology)
 
-Anxiety disorders are among the most common mental health conditions, affecting millions of people worldwide. They involve excessive fear or worry that doesn't go away and may worsen over time. Understanding these conditions is the first step toward getting help.
+Infertility is defined as the inability to conceive after one year of regular unprotected sexual intercourse. Globally, 10-15% of couples are affected, leading to psychological, emotional, and social distress.
 
-## Common Types of Anxiety Disorders
+In a developing society like India, infertility is not just a medical condition, but also a source of psychosocial stigma. While physical symptoms are widely addressed, the psychological impact often receives very little attention, especially when it develops into depression, anxiety, suicidal ideation, and suicidal risk.
 
-**Generalized Anxiety Disorder (GAD)**
+Women often face greater emotional pain due to family and societal pressure around motherhood. Men are also affected and may suffer silently due to stigma around male infertility and emotional breakdown. The stress of repeated treatment failures, frequent abortions, or miscarriages, along with social judgment, can worsen mental well-being. In many cases, inadequate support from friends and family leads to isolation and hopelessness, increasing suicidal thoughts.
 
-People with GAD experience persistent worry about various aspects of daily life, including health, work, social interactions, and everyday circumstances. This worry is difficult to control and can cause significant distress.
+## Research Evidence and Mental Health Risk
 
-**Panic Disorder**
+A few research studies have reported a strong relation between infertility and increased risk of suicidal ideation, especially in women.
 
-Characterized by recurrent, unexpected panic attacks—sudden periods of intense fear that may include palpitations, sweating, trembling, shortness of breath, and feelings of impending doom.
+A study by Ghosh Dastidar investigated suicidal risk among 100 infertile women and 100 fertile women, using simple random sampling among women undergoing fertility treatment in Kolkata, India. Results from the MINI Scale revealed that 25% of infertile women experienced suicidal risk or suicidal ideation.
 
-**Social Anxiety Disorder**
+## Indian Data and Rising Concern
 
-Involves intense fear of social situations where one might be judged, embarrassed, or scrutinized by others. This fear can be so severe that it interferes with work, school, or other daily activities.
+According to the Accidental Deaths and Suicides in India report by the National Crime Records Bureau (NCRB), 374 individuals died by suicide in 2021 due to infertility, accounting for roughly 0.2% of all recorded suicides (NCRB, 2022).
 
-**Specific Phobias**
+By 2024, this proportion rose to 0.3% (Armstrong & Vijayakumar, 2018; Arya et al., 2021; Raj et al., 2024).
 
-An intense, irrational fear of specific objects or situations, such as heights, flying, animals, or receiving injections.
+While this remains a small proportion of total deaths by suicide in India, infertility has steadily emerged over the last decade as a serious contributor to emotional suffering among couples.
 
-## Recognizing the Signs
+## Why Early Psychological Support Matters
 
-Physical symptoms of anxiety may include:
-- Increased heart rate
-- Rapid breathing
-- Sweating
-- Trembling
-- Feeling tired or weak
-- Difficulty concentrating
-- Sleep disturbances
-- Gastrointestinal problems
+Routine mental health screening during fertility treatment can reduce emotional turmoil and identify risk early.
 
-Emotional and behavioral signs include:
-- Excessive worry
-- Restlessness
-- Irritability
-- Sense of impending danger
-- Avoidance behaviors
-- Difficulty controlling worry
+This is an alarm call for affected individuals and families to seek help from mental health experts and psychological intervention services.
 
-## Evidence-Based Treatment Approaches
-
-**Cognitive Behavioral Therapy (CBT)**
-
-CBT is one of the most effective treatments for anxiety disorders. It helps you identify and challenge negative thought patterns and develop healthier ways of thinking and responding to anxiety-provoking situations.
-
-**Exposure Therapy**
-
-This involves gradually facing feared situations in a safe, controlled environment. Over time, this reduces anxiety and increases confidence in managing challenging situations.
-
-**Mindfulness and Relaxation Techniques**
-
-Practices like meditation, deep breathing, progressive muscle relaxation, and yoga can help reduce anxiety symptoms and promote overall well-being.
-
-**Medication**
-
-In some cases, medication may be recommended alongside therapy. Common medications include SSRIs, SNRIs, and benzodiazepines, which should always be prescribed and monitored by a healthcare professional.
-
-## Self-Care Strategies
-
-In addition to professional treatment, several self-care strategies can help manage anxiety:
-
-- Regular physical exercise
-- Adequate sleep
-- Healthy diet
-- Limiting caffeine and alcohol
-- Practicing stress management techniques
-- Maintaining social connections
-- Setting realistic goals and priorities
-
-## When to Seek Professional Help
-
-It's important to seek help if anxiety:
-- Interferes with work, relationships, or daily activities
-- Causes significant distress
-- Leads to avoidance behaviors
-- Persists for several weeks or months
-- Includes thoughts of self-harm
-
-## Moving Forward
-
-Remember, anxiety disorders are highly treatable. With proper support and treatment, most people with anxiety disorders can learn to manage their symptoms and lead fulfilling lives. The first step is reaching out to a mental health professional who can provide an accurate diagnosis and develop a personalized treatment plan.
-
-If you're struggling with anxiety, know that you're not alone, and help is available. At Saheeli Counselling, we offer compassionate, evidence-based treatment for anxiety disorders. Our experienced team is here to support you on your journey toward improved mental health and well-being.`,
-    author: 'S. Sunayana',
-    authorRole: 'Psychologist',
-    date: '2026-02-15',
-    readTime: '8 min read',
+Breaking stigma, encouraging open conversations, and ensuring timely support can save lives.`,
+    author: 'Sunayana Sukka',
+    authorRole: 'Ph.D in Psychology',
+    date: '2024-09-10',
+    readTime: '6 min read',
     category: 'mental-health',
-    tags: ['Anxiety', 'Mental Health', 'Therapy', 'CBT', 'Wellness'],
-    image: '🧠',
+    tags: ['Infertility', 'Suicide Prevention', 'Mental Health', 'Psychological Support', 'World Suicide Prevention Day'],
+    image: '/images/blog/infertility-suicide-awareness.svg',
     featured: true,
   },
   {
     id: 2,
-    slug: 'building-healthy-relationships',
-    title: 'Building Healthy Relationships: Communication Skills That Transform Connections',
-    excerpt: 'Discover the essential communication skills that can strengthen your relationships and create deeper, more meaningful connections with others.',
-    content: `Strong, healthy relationships are fundamental to our well-being and happiness. Whether it's with a romantic partner, family member, friend, or colleague, the quality of our relationships significantly impacts our mental health and life satisfaction.
+    slug: 'infertility-and-trauma-mental-health-suffers-in-silence',
+    title: 'Infertility and Trauma: How Mental Health Suffers in Silence',
+    excerpt: 'Infertility can become a prolonged psychological trauma marked by stigma, anxiety, depression, and isolation, making timely mental health intervention essential during fertility treatment.',
+    content: `January 20, 2025
 
-## The Foundation of Healthy Relationships
+By Dr. Sunayana Sukka
 
-At the core of every healthy relationship lies effective communication. Without it, misunderstandings arise, resentment builds, and connections weaken. Learning to communicate effectively is one of the most valuable skills you can develop.
+## Trauma and Infertility
 
-## Essential Communication Skills
+One of the most prevalent mental health conditions worldwide is infertility. Globally, 48 million couples are estimated to be affected.
 
-**Active Listening**
+Here, infertility is viewed beyond the medical definition by the World Health Organization (WHO, 2022) as a failure to conceive after regular unprotected sexual intercourse for one year. It may occur due to female factors, male factors, or unexplained infertility.
 
-Active listening goes beyond simply hearing words. It involves:
-- Giving your full attention to the speaker
-- Maintaining appropriate eye contact
-- Avoiding interruptions
-- Reflecting back what you've heard
-- Asking clarifying questions
-- Showing empathy and understanding
+Lifestyle factors such as smoking, alcohol use, diet, and lack of physical activity affect fecundity among both men and women.
 
-When people feel truly heard, they feel valued and respected, which strengthens emotional bonds.
+Infertility is often experienced as a stressful journey among couples. It can lead to unhappy marital life, lower quality of life, low self-esteem, and at times even separation or divorce. People living with childlessness may feel highly vulnerable and can experience post-traumatic stress symptoms.
 
-**Expressing Yourself Clearly**
+Infertility and its treatment can deeply affect day-to-day life, including emotional turmoil, hopelessness, fear, anxiety, and depression.
 
-Clear communication requires:
-- Using "I" statements instead of "you" statements
-- Being specific about your thoughts and feelings
-- Avoiding generalizations like "always" or "never"
-- Taking responsibility for your emotions
-- Being honest while remaining respectful
+It remains one of the most unattended and unacknowledged concerns among couples. Social stigma around fertility issues still prevents open conversation in many families and communities. People often feel embarrassed or blamed when they try to talk about it.
 
-For example, instead of saying "You never listen to me," try "I feel unheard when I'm speaking and you're looking at your phone."
+Both men and women are affected by infertility, yet women are frequently blamed and socially victimized. This reinforces gender inequality regardless of medical reality.
 
-**Emotional Intelligence**
+## Evidence Linking Infertility and Trauma
 
-Understanding and managing emotions—both yours and others'—is crucial for healthy relationships. This includes:
-- Recognizing your own emotional states
-- Understanding how your emotions affect your behavior
-- Being aware of others' emotions
-- Responding with empathy
-- Managing emotional reactions appropriately
+Several studies report a strong relationship between trauma and infertility.
 
-## Building Trust and Intimacy
+Stress levels are often higher among women than men, producing devastating effects on mental health. Many studies indicate that infertile patients undergo repeated trauma and stress when they are unable to achieve a positive result before expected timelines.
 
-**Vulnerability**
+Month after month, unsuccessful attempts can intensify feelings of grief and depression. In addition, rising treatment costs create significant financial pressure, pushing many couples into further emotional distress.
 
-Being vulnerable means allowing yourself to be seen—sharing your thoughts, feelings, fears, and dreams. While vulnerability can feel risky, it's essential for deep connection. When you're vulnerable, you give others permission to be the same, creating mutual understanding and intimacy.
+## Why Psychological Intervention Matters
 
-**Consistency and Reliability**
+Psychological intervention during fertility treatment can be highly beneficial for individuals and couples navigating these difficult phases.
 
-Trust is built through consistent actions over time. Being reliable, keeping commitments, and following through on promises demonstrates that you value the relationship and can be counted on.
+Due to social taboos and stigma, many patients spend long periods in silence, depression, and emotional isolation without sharing what they are going through.
 
-**Respect for Boundaries**
+A psychologist can help individuals process trauma, regulate emotional distress, and improve overall quality of life.
 
-Healthy relationships require respecting personal boundaries. This means:
-- Understanding that each person is an individual with their own needs
-- Communicating your own boundaries clearly
-- Honoring others' boundaries without taking it personally
-- Being willing to negotiate and compromise when appropriate
-
-## Conflict Resolution
-
-Disagreements are normal in any relationship. What matters is how you handle them.
-
-**Healthy Conflict Management**
-
-- Address issues when you're calm, not in the heat of anger
-- Focus on the specific issue, not attacking the person
-- Look for solutions, not who's to blame
-- Be willing to compromise
-- Take breaks if emotions escalate
-- Seek to understand before being understood
-
-**Repair and Forgiveness**
-
-After conflicts, it's important to repair the relationship through:
-- Genuine apologies when appropriate
-- Taking responsibility for your part
-- Forgiving mistakes (including your own)
-- Learning from disagreements
-- Recommitting to the relationship
-
-## Maintaining Connection
-
-**Quality Time**
-
-Relationships need nurturing through quality time together. This means:
-- Being present, not just physically but mentally and emotionally
-- Creating shared experiences and memories
-- Having meaningful conversations
-- Engaging in activities you both enjoy
-- Showing interest in each other's lives
-
-**Appreciation and Gratitude**
-
-Regularly expressing appreciation strengthens relationships. Simple actions like:
-- Saying "thank you" for everyday things
-- Acknowledging efforts and contributions
-- Giving genuine compliments
-- Celebrating successes together
-- Showing affection in ways meaningful to your partner
-
-## Red Flags in Relationships
-
-While working on relationships is important, it's equally important to recognize unhealthy patterns:
-- Constant criticism or contempt
-- Stonewalling or refusing to communicate
-- Controlling behavior
-- Lack of respect for boundaries
-- Patterns of dishonesty
-- Emotional or physical abuse
-
-If you notice these patterns, seek professional help.
-
-## When to Seek Couples Therapy
-
-Professional support can be beneficial when:
-- Communication has broken down
-- You're stuck in negative patterns
-- Trust has been damaged
-- You're considering separation
-- You want to strengthen your relationship proactively
-
-## Growing Together
-
-Healthy relationships evolve over time. Both individuals grow and change, and successful relationships adapt to these changes. This requires:
-- Open communication about evolving needs
-- Supporting each other's personal growth
-- Being flexible and willing to adjust
-- Continuing to invest in the relationship
-- Maintaining your individual identity while building shared identity
-
-## Conclusion
-
-Building and maintaining healthy relationships is an ongoing process that requires effort, commitment, and practice. The communication skills discussed here can transform your relationships, creating deeper connections and greater satisfaction.
-
-Remember, it's never too late to improve your relationship skills. Whether you're working on a romantic partnership, family relationships, or friendships, these principles apply. At Saheeli Counselling, we offer couples therapy and relationship counseling to help you build stronger, more fulfilling connections.`,
-    author: 'S. Sunayana',
-    authorRole: 'Psychologist',
-    date: '2026-02-10',
-    readTime: '10 min read',
-    category: 'relationships',
-    tags: ['Relationships', 'Communication', 'Couples Therapy', 'Connection'],
-    image: '💝',
+Psychotherapy supports patients in addressing psychological suffering while building resilience, improving coping, and sustaining hope during their fertility journey.`,
+    author: 'Dr. Sunayana Sukka',
+    authorRole: 'Ph.D in Psychology',
+    date: '2025-01-20',
+    readTime: '7 min read',
+    category: 'mental-health',
+    tags: ['Infertility', 'Trauma', 'Mental Health', 'Psychotherapy', 'Stigma'],
+    image: '/images/I&T.png',
     featured: true,
   },
   {
     id: 3,
-    slug: 'self-care-strategies-for-busy-professionals',
-    title: 'Self-Care Strategies for Busy Professionals: Finding Balance in a Demanding World',
-    excerpt: 'Practical, evidence-based self-care strategies that busy professionals can incorporate into their daily routines to maintain mental health and prevent burnout.',
-    content: `In today's fast-paced professional world, self-care often takes a backseat to work demands, deadlines, and responsibilities. However, neglecting your well-being can lead to burnout, decreased productivity, and serious health consequences.
+    slug: 'post-pregnancy-body-image-fighting-dysmorphia',
+    title: 'Post-Pregnancy Body Image: How New Moms Can Fight Back Against Dysmorphia',
+    excerpt: 'Postpartum body changes can trigger body-image distress, low self-esteem, and depression. With support, mindful habits, and therapy, new mothers can rebuild self-acceptance and emotional well-being.',
+    content: `By Dr. Sunayana Sukka
 
-## Understanding Self-Care
+PhD, Psychologist
 
-Self-care isn't selfish—it's essential. It involves deliberate actions to care for your physical, mental, and emotional health. For busy professionals, self-care means finding sustainable ways to maintain well-being while managing demanding careers.
+## Post-Pregnancy: How to Combat Body Dysmorphia
 
-## The Cost of Neglecting Self-Care
+As soon as you conceive, your body undergoes many physical and emotional changes. The journey of bringing new life into this world is incredible.
 
-When professionals consistently prioritize work over personal well-being, the consequences can include:
-- Chronic stress and anxiety
-- Physical health problems
-- Decreased job performance
-- Relationship difficulties
-- Emotional exhaustion
-- Loss of passion for work
-- Increased risk of burnout
+Due to hormonal imbalance during pregnancy, major changes can be observed in the body, including weight gain, skin tags, stretch marks, pigmentation, sagging breasts, acne, and frizzy hair. In addition to this, mood changes, tiredness, and fatigue can make it difficult to feel good about your body.
 
-## Practical Self-Care Strategies
+According to WHO, postpartum is described as one of the most critical yet neglected phases in a mother's life. Body image disturbances during pregnancy can increase the risk of postpartum depression.
 
-**Morning Rituals**
+## What Is Body Dysmorphia?
 
-How you start your day sets the tone for everything that follows. Consider:
-- Waking up 15-30 minutes earlier for quiet time
-- Practicing meditation or mindfulness
-- Engaging in light exercise or stretching
-- Eating a nutritious breakfast
-- Avoiding checking email first thing
-- Setting positive intentions for the day
+Body dysmorphia is a mental health disorder that causes distress over perceived appearance flaws. A person may feel certain body parts are imperfect, even when others do not see these flaws.
 
-Even 10 minutes of mindful morning practice can significantly impact your stress levels and focus throughout the day.
+Most people with body dysmorphic concerns feel anxious about skin, hair, and body weight. These obsessive thoughts can interfere with day-to-day functioning.
 
-**Boundary Setting**
+## Postpartum and Body Dysmorphia
 
-Establishing clear boundaries between work and personal life is crucial:
-- Define specific work hours and stick to them
-- Create a dedicated workspace if working from home
-- Turn off work notifications after hours
-- Learn to say "no" to non-essential commitments
-- Communicate your boundaries clearly to colleagues
-- Protect your time for rest and relationships
+During pregnancy and childbirth, the body shifts and changes to accommodate new life. Sleepless nights, delayed meals, continuous breastfeeding, and baby care demands can make early motherhood extremely overwhelming.
 
-**Micro-Breaks Throughout the Day**
+The truth is that body changes after childbirth are natural. Instead of feeling ashamed, mothers can be encouraged to accept these changes and appreciate the strength of their body.
 
-You don't need hours for self-care. Short breaks can be remarkably effective:
-- Take a 5-minute walk every hour
-- Practice deep breathing exercises
-- Stretch at your desk
-- Step outside for fresh air
-- Listen to a favorite song
-- Do a quick mindfulness exercise
+Research indicates that many women experience trauma, depression, and low self-esteem due to visible body changes. Other studies suggest social media can play a strong role by increasing exposure to body-shape pressure and unrealistic standards, which may worsen dissatisfaction and mental health behaviors.
 
-These micro-breaks reduce stress, improve focus, and prevent the cumulative effects of chronic tension.
+## How to Manage
 
-## Physical Self-Care
+**Seek professional advice**
 
-**Movement and Exercise**
+Support from healthcare professionals can improve overall well-being, including guidance on balanced diet and healthy recovery.
 
-Regular physical activity is one of the most effective stress management tools:
-- Aim for at least 30 minutes of moderate exercise most days
-- Find activities you genuinely enjoy
-- Schedule exercise like any important meeting
-- Use lunch breaks for walks
-- Take stairs instead of elevators
-- Try desk exercises during long work sessions
+**Social support from partner**
 
-Exercise doesn't have to mean gym memberships or intense workouts. Any movement counts.
+Seeking support from a spouse can strengthen bonding between couples. Surround yourself with positive people who affirm your health and help you feel secure.
 
-**Sleep Hygiene**
+**Physical fitness**
 
-Quality sleep is non-negotiable for mental health and professional performance:
-- Maintain a consistent sleep schedule
-- Create a relaxing bedtime routine
-- Keep your bedroom cool, dark, and quiet
-- Limit screen time before bed
-- Avoid caffeine in the afternoon
-- Consider meditation or reading before sleep
+Regular exercise can help improve posture and confidence. Always consult a physician before starting workouts postpartum.
 
-Most adults need 7-9 hours of sleep per night for optimal functioning.
+**Be mindful on social media**
 
-**Nutrition**
+Social media can be a double-edged sword. It may perpetuate unrealistic beauty ideals and trigger feelings of inadequacy, while also offering useful community support. Use it mindfully.
 
-What you eat affects your energy, mood, and cognitive function:
-- Plan and prepare healthy meals when possible
-- Keep nutritious snacks at work
-- Stay hydrated throughout the day
-- Limit excessive caffeine and sugar
-- Take time to actually eat lunch (away from your desk)
-- Consider meal prep on weekends
+**Seek therapy**
 
-## Mental and Emotional Self-Care
-
-**Mindfulness and Meditation**
-
-Regular mindfulness practice reduces stress and increases resilience:
-- Start with just 5 minutes daily
-- Use apps like Headspace or Calm for guidance
-- Practice mindful breathing during commutes
-- Engage in single-tasking rather than multitasking
-- Notice and acknowledge your thoughts without judgment
-
-**Journaling**
-
-Writing helps process emotions and gain perspective:
-- Keep a gratitude journal
-- Write about daily experiences and feelings
-- Use journaling to problem-solve
-- Track patterns in your mood and stress levels
-- Set and review personal and professional goals
-
-**Connection and Relationships**
-
-Social connection is vital for mental health:
-- Schedule regular time with friends and family
-- Have meaningful conversations, not just surface chat
-- Join professional or hobby-based groups
-- Maintain contact with supportive colleagues
-- Consider scheduling "friend dates" like work meetings
-- Don't isolate when stressed—reach out
-
-## Professional Development as Self-Care
-
-**Learning and Growth**
-
-Investing in your professional development can reduce job stress:
-- Take courses that interest you
-- Attend conferences or workshops
-- Read industry publications
-- Find a mentor
-- Join professional organizations
-- Pursue projects aligned with your values
-
-**Career Alignment**
-
-Ensure your work aligns with your values and goals:
-- Regularly assess job satisfaction
-- Identify aspects of work you find meaningful
-- Discuss career goals with supervisors
-- Consider whether current role supports overall well-being
-- Be open to necessary changes
-
-## Creating a Personal Self-Care Plan
-
-**Assess Your Current State**
-
-- Identify areas of imbalance
-- Notice physical and emotional symptoms of stress
-- Recognize your specific needs and challenges
-
-**Start Small**
-
-- Choose 1-2 strategies to implement first
-- Build habits gradually
-- Celebrate small wins
-- Adjust strategies as needed
-
-**Schedule Self-Care**
-
-- Treat self-care activities like important appointments
-- Block time in your calendar
-- Prepare for obstacles
-- Have backup plans for busy days
-
-**Regular Check-Ins**
-
-- Monthly review of what's working
-- Adjust strategies as life circumstances change
-- Identify new stressors early
-- Celebrate progress
-
-## Overcoming Obstacles
-
-**"I Don't Have Time"**
-
-Self-care doesn't require huge time investments. Even 5-10 minutes can make a difference. The question isn't whether you have time, but whether you're making it a priority.
-
-**"I Feel Guilty"**
-
-Remember that self-care enables you to show up better in all areas of life. You can't pour from an empty cup. Taking care of yourself allows you to better care for others and perform better at work.
-
-**"It Feels Selfish"**
-
-Self-care is about maintaining your health and well-being. It's as essential as eating or sleeping. You're not taking from others; you're ensuring you can continue contributing effectively.
-
-## When to Seek Professional Help
-
-Consider professional support if you're experiencing:
-- Persistent feelings of overwhelm despite self-care efforts
-- Symptoms of depression or anxiety
-- Difficulty functioning at work or home
-- Thoughts of self-harm
-- Substance use to cope with stress
-- Physical symptoms without medical explanation
-
-## Conclusion
-
-Self-care for busy professionals isn't about adding more to your to-do list—it's about making intentional choices to protect and nurture your well-being. Start small, be consistent, and remember that taking care of yourself enables you to thrive both personally and professionally.
-
-At Saheeli Counselling, we help busy professionals develop personalized self-care strategies and build resilience. If you're struggling with work-life balance, stress, or burnout, we're here to support you.`,
-    author: 'S. Sunayana',
-    authorRole: 'Psychologist',
-    date: '2026-02-05',
-    readTime: '12 min read',
-    category: 'self-care',
-    tags: ['Self-Care', 'Work-Life Balance', 'Burnout', 'Professional Development'],
-    image: '🌟',
+If you are feeling depressed, anxious, or having negative thoughts about your body, therapy can help you move toward a peaceful and healthier life. A therapist can support you in facing current emotional challenges and rebuilding self-worth.`,
+    author: 'Dr. Sunayana Sukka',
+    authorRole: 'PhD, Psychologist',
+    date: '2024-04-25',
+    readTime: '7 min read',
+    category: 'wellness',
+    tags: ['Postpartum', 'Body Image', 'Body Dysmorphia', 'New Mothers', 'Therapy'],
+    image: '/images/L2.png',
+    additionalImages: ['/images/L1.png', '/images/L3.png'],
     featured: true,
   },
   {
     id: 4,
-    slug: 'helping-children-manage-emotions',
-    title: 'Helping Children Manage Their Emotions: A Guide for Parents',
-    excerpt: 'Practical strategies for parents to help children understand, express, and regulate their emotions in healthy ways.',
-    content: `Teaching children to understand and manage their emotions is one of the most important gifts parents can give. Emotional regulation skills developed in childhood form the foundation for mental health, relationships, and success throughout life.
-
-## Understanding Childhood Emotions
-
-Children experience the full range of human emotions, but they often lack the vocabulary and skills to express feelings appropriately. What may look like misbehavior is often a child struggling to communicate emotional needs.
-
-## Why Emotional Regulation Matters
-
-Children who develop strong emotional regulation skills are better able to:
-- Form healthy relationships
-- Handle academic challenges
-- Cope with disappointment and frustration  
-- Develop self-confidence
-- Manage stress and anxiety
-- Make good decisions
-- Develop empathy for others
-
-## Age-Appropriate Expectations
-
-**Toddlers (1-3 years)**
-- Limited emotional control
-- Frequent tantrums and emotional outbursts
-- Beginning to name basic emotions
-- Need significant adult support
-
-**Preschoolers (3-5 years)**
-- Developing emotional vocabulary
-- Learning to use words instead of actions
-- Still need help calming down
-- Beginning to show empathy
-
-**School-Age (6-12 years)**
-- Better emotional control
-- Can discuss feelings more clearly
-- Starting to use coping strategies independently
-- Understanding of complex emotions developing
-
-**Teenagers (13+ years)**
-- Intense emotions due to development
-- Increasing independence in managing emotions
-- Benefit from continued parental support
-- Need validation and space
-
-## Strategies for Teaching Emotional Regulation
-
-**Name the Emotion**
-
-Help children build emotional vocabulary:
-- Label emotions as they occur: "You seem frustrated"
-- Read books about feelings
-- Use emotion charts or feeling faces
-- Validate all emotions as acceptable
-- Teach that all feelings are okay, but not all behaviors are
-
-**Model Healthy Emotional Expression**
-
-Children learn primarily through observation:
-- Talk about your own emotions appropriately
-- Demonstrate healthy coping strategies
-- Show that adults have feelings too
-- Apologize when you handle emotions poorly
-- Explain how you manage difficult feelings
-
-**Create a Safe Emotional Environment**
-
-- Accept all emotions without judgment
-- Avoid dismissing or minimizing feelings
-- Don't punish emotional expression
-- Provide comfort during difficult emotions
-- Let children know it's safe to share feelings
-
-**Teach Calming Strategies**
-
-Give children tools to self-soothe:
-- Deep breathing exercises
-- Counting to ten
-- Taking a break in a calm space
-- Physical activity to release energy
-- Drawing or journaling
-- Listening to music
-- Using a comfort object
-- Progressive muscle relaxation
-
-**Problem-Solving Skills**
-
-Once calm, help children address situations:
-- Identify the problem clearly
-- Brainstorm possible solutions together
-- Discuss potential outcomes
-- Choose a solution to try
-- Evaluate results
-- Adjust approach as needed
-
-## Handling Specific Situations
-
-**Temper Tantrums**
-
-- Stay calm yourself
-- Ensure physical safety
-- Don't give in to demands
-- Wait for the tantrum to pass
-- Discuss what happened once calm
-- Be consistent
-
-**Anxiety and Worry**
-
-- Take fears seriously
-- Teach relaxation techniques
-- Help identify worrying thoughts
-- Challenge unrealistic fears gently
-- Encourage gradual exposure
-- Seek professional help if needed
-
-**Sadness and Grief**
-
-- Allow expression of sadness
-- Provide comfort and reassurance
-- Maintain routines
-- Answer questions honestly (age-appropriately)
-- Watch for prolonged symptoms
-- Consider counseling support
-
-**Anger and Frustration**
-
-- Acknowledge the feeling
-- Set limits on aggressive behavior
-- Teach appropriate ways to express anger
-- Help identify triggers
-- Practice problem-solving
-- Use physical outlets when appropriate
-
-## Daily Practices for Emotional Health
-
-**Check-In Conversations**
-
-- Ask about highs and lows of the day
-- Use specific questions, not just "How was your day?"
-- Share your own experiences
-- Listen without immediately fixing problems
-- Validate feelings before offering solutions
-
-**Emotional Literacy Activities**
-
-- Read books featuring emotions
-- Play emotion charades
-- Create feelings journals
-- Use art to express emotions
-- Practice identifying emotions in others
-- Discuss emotions in age-appropriate shows/movies
-
-**Mindfulness for Kids**
-
-- Practice mindful breathing together
-- Do simple meditation exercises
-- Engage senses: notice sights, sounds, smells
-- Practice gratitude
-- Use mindfulness apps for children
-- Make it fun, not a chore
-
-## Building Emotional Resilience
-
-**Encourage Problem-Solving**
-
-- Let children try before helping
-- Support appropriate risk-taking
-- Allow natural consequences when safe
-- Discuss what didn't work and why
-- Celebrate effort, not just success
-
-**Develop Coping Skills**
-
-- Build a "coping skills toolbox"
-- Practice strategies when calm
-- Identify what works for your child
-- Encourage various methods
-- Reinforce use of skills
-
-**Foster Self-Esteem**
-
-- Provide unconditional love
-- Focus on strengths
-- Encourage interests and passions
-- Give age-appropriate responsibilities
-- Offer genuine praise for effort
-- Accept imperfection
-
-## When to Seek Professional Help
-
-Consider consulting a child psychologist if:
-- Emotions interfere with daily functioning
-- Behaviors are dangerous to self or others
-- No improvement despite consistent support
-- Significant changes in behavior or mood
-- Trauma or significant life changes
-- School reports concerns
-- Physical symptoms without medical cause
-- Your parental stress is overwhelming
-
-## Special Considerations
-
-**Highly Sensitive Children**
-
-- Need extra support processing emotions
-- More affected by sensory input
-- Require more downtime
-- Benefit from predictable routines
-- May need smaller social groups
-
-**Neurodivergent Children**
-
-- May experience and express emotions differently
-- Benefit from explicit teaching of social-emotional skills
-- May need different strategies than typical children
-- Visual supports can be especially helpful
-- Professional guidance often beneficial
-
-**Children Experiencing Trauma**
-
-- May have intense or unpredictable emotions
-- Need specialized therapeutic support
-- Require extra patience and understanding
-- Benefit from trauma-informed approaches
-- Safety and consistency are crucial
-
-## Creating an Emotional Support Plan
-
-**Know Your Child**
-
-- Identify emotional triggers
-- Recognize early warning signs
-- Note what calming strategies work best
-- Understand their unique temperament
-- Adjust expectations accordingly
-
-**Prepare for Challenging Situations**
-
-- Discuss upcoming events
-- Review coping strategies
-- Have a plan for difficult moments
-- Brief caregivers and teachers
-- Follow up afterward
-
-**Maintain Consistency**
-
-- Use similar approaches at home and school
-- Communicate with all caregivers
-- Stick to established routines when possible
-- Be predictable in your responses
-- Apply rules consistently
-
-## Taking Care of Yourself
-
-Remember that you can't support your child's emotional health if you're depleted:
-- Practice your own emotional regulation
-- Seek support when needed
-- Take breaks and practice self-care
-- Don't expect perfection from yourself
-- Consider therapy for parental support
-
-## Conclusion
-
-Teaching children to manage emotions is an ongoing process that requires patience, consistency, and compassion. Every child develops at their own pace, and setbacks are normal. By providing a safe, supportive environment and explicitly teaching emotional skills, you're giving your child tools that will benefit them throughout life.
-
-At Saheeli Counselling, we offer child counseling and parent support services to help families navigate emotional development. Our experienced team can provide strategies tailored to your child's unique needs.`,
-    author: 'S. Sunayana',
-    authorRole: 'Psychologist',
-    date: '2026-01-28',
-    readTime: '11 min read',
-    category: 'parenting',
-    tags: ['Parenting', 'Child Development', 'Emotional Intelligence', 'Family'],
-    image: '👨‍👩‍👧‍👦',
+    slug: 'does-anxiety-play-a-role-during-pregnancy',
+    title: 'Does Anxiety Play a Role During Pregnancy?',
+    excerpt: 'Antenatal anxiety is common and can affect both parents, maternal well-being, and child development. Early support, screening, CBT, lifestyle care, and timely treatment can make a meaningful difference.',
+    content: `April 6, 2024
+
+BY: Sunayana Sukka
+
+## Anxiety and Pregnancy
+
+Pregnancy is a journey for both mother and father, who sail together toward joy, love, and a new beginning. It is often a deeply emotional time for couples and families.
+
+Experiencing fetal movement and baby kicks can be exciting, but the journey also includes major shifts in routine, expectations, and emotional state. From food habits to sleep patterns and frequent medical visits, pregnancy can be physically and mentally demanding.
+
+Mood swings, uncertainty, repeated tests, scan reports, and long hospital waits can increase stress and anxiety. In many families, social pressure about gender expectations and family pride can further burden the expectant mother and couple.
+
+Many women experience physical, psychological, and physiological changes that affect mental health. Whether pregnancy is planned or follows fertility treatment, the period from conception to childbirth can feel like an emotional roller coaster.
+
+Research consistently shows that strong social support helps reduce emotional and physical pressure, improving the well-being of both mother and child.
+
+## Antenatal Anxiety: How Common Is It?
+
+Anxiety during pregnancy is often called antenatal anxiety. It is common, and roughly 1 in 10 pregnant women experience significant anxiety symptoms at some stage.
+
+Anxiety may affect either parent and can range from mild to severe. Common concerns include the baby's health, confidence in parenting, and financial strain.
+
+Pregnancy is often portrayed as only joyful, but emotional experiences are different for everyone.
+
+During this period, fear about maternal health and fetal health can sharply increase anxiety. Studies suggest women frequently report higher anxiety than men, and first-time mothers may experience more intense fear. Rural populations may also face higher anxiety due to reduced access to support and care.
+
+Scary birth narratives, fear of pain, and concern about complications can trigger additional stress. This is where social support and informed care play a critical role.
+
+## Effects of Anxiety on Child Health
+
+Severe untreated anxiety during pregnancy may influence maternal and fetal outcomes.
+
+Studies have linked moderate to severe antenatal anxiety with low birth weight, reduced gestational age, altered Apgar scores, and changes in fetal hemodynamics and movement.
+
+Long-term behavioral effects may include poor concentration, hyperactivity, and impaired cognitive development in children. Some medical reports also associate maternal anxiety with a higher risk of respiratory and stress-related conditions in children.
+
+In some cases, anxiety may be associated with existing conditions such as thyroid dysfunction, diabetes, chronic pain, or hereditary vulnerability.
+
+## Symptoms of Antenatal Anxiety
+
+Symptoms can vary by individual, history, and severity. Previous difficult pregnancies, missed abortions, fertility-related stress, or bereavement may intensify panic responses.
+
+Common symptoms include:
+- Generalized anxiety with persistent worry and nervousness
+- Agoraphobic patterns, muscle tension, and restlessness
+- Panic attacks with overwhelming fear, shortness of breath, and dizziness
+- Post-traumatic stress symptoms, including flashbacks, nightmares, and difficulty relaxing
+
+When these symptoms occur daily, there is a higher risk of severe anxiety affecting both mother and baby.
+
+Some studies indicate that selective serotonin reuptake inhibitors (SSRIs) may be used during pregnancy in selected cases with clinical monitoring. Decisions about medication should always be individualized and made with a qualified clinician, balancing maternal mental health and fetal safety.
+
+## Managing Anxiety in Pregnancy
+
+CBT-based techniques are highly useful in reducing antenatal anxiety. Psychologists can support expectant mothers with structured coping methods, relaxation techniques, and thought restructuring.
+
+For moderate to severe symptoms, psychiatrists may consider timely medical intervention.
+
+Helpful daily practices include:
+- Relaxation methods such as mindfulness, prenatal yoga, and meditation
+- Regular sleep, ideally around eight hours where possible
+- Journaling, planning, and time management
+- Spending quality time with supportive loved ones
+- Reducing exposure to stressors and conflict
+- A wholesome, fiber-rich diet and stable hydration
+
+## A Shared Responsibility
+
+This is a call for open conversations about mental health in pregnancy. Fathers can also experience psychological strain due to family pressure, financial demands, and responsibility overload.
+
+Silence does not heal anxiety. Speaking with a healthcare provider early is essential.
+
+Mental health screening during pregnancy should be treated as important as physical screening to reduce future complications.
+
+On the whole, a healthy partner relationship, social support, and focus on maternal-child well-being can bring more confidence and positivity to the pregnancy journey.`,
+    author: 'Sunayana Sukka',
+    authorRole: 'PhD, Psychologist',
+    date: '2024-04-06',
+    readTime: '10 min read',
+    category: 'mental-health',
+    tags: ['Pregnancy', 'Antenatal Anxiety', 'Maternal Mental Health', 'CBT', 'Prenatal Care'],
+    image: '/images/L5.png',
     featured: false,
   },
   {
