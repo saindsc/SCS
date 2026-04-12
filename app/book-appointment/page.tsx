@@ -440,7 +440,7 @@ export default function BookAppointmentPage() {
                 <span>Contact Us</span>
               </Link>
               <a
-                href="tel:+1234567890"
+                href="tel:+918008231699"
                 className="inline-flex items-center justify-center space-x-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl hover:from-primary-700 hover:to-primary-800 shadow-lg hover:shadow-primary-300 transition-all duration-200"
               >
                 <Calendar className="h-5 w-5" />

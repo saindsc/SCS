@@ -356,7 +356,7 @@ export default function ContactPage() {
                 </p>
 
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+918008231699"
                   className="inline-flex items-center space-x-2 text-primary-700 font-semibold hover:text-primary-800"
                 >
                   <Phone className="h-5 w-5" />
