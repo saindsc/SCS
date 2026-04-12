@@ -1,0 +1,454 @@
+BLOG IMPLEMENTATION - QUICK REFERENCE GUIDE
+============================================
+
+PROJECT: Saheeli Counselling Services (SCS) Website
+LAST UPDATED: 2026-04-12
+TASK: Blog Feature Implementation Complete
+
+🎯 QUICK SUMMARY
+================
+Fully functional blog system with:
+✅ 6 complete articles
+✅ 5 blog categories + "All"
+✅ Dynamic content routing
+✅ Category filtering
+✅ Article search/discovery
+✅ Author credentials
+✅ Social sharing
+✅ Related articles
+✅ Responsive design
+✅ Smooth animations
+
+📁 FILES CREATED/MODIFIED
+=========================
+
+1. lib/blog-data.ts (NEW)
+   - Central blog data repository
+   - 6 complete articles with content
+   - Category definitions
+   - Helper functions
+
+2. app/blog/page.tsx (MODIFIED)
+   - Blog listing page with categories
+   - Featured articles showcase
+   - Category filter buttons
+   - All posts grid view
+
+3. app/blog/[slug]/BlogPostContent.tsx (MODIFIED)
+   - Individual article detail page
+   - Full formatted content display
+   - Author bio section
+   - Related articles section
+   - Social share functionality
+
+🏗️ DATA STRUCTURE
+=================
+
+BlogPost Object:
+```
+{
+  id: number
+  slug: string (URL identifier)
+  title: string (Article title)
+  excerpt: string (Short summary)
+  content: string (Full article - markdown-style)
+  author: string (Writer name)
+  authorRole: string (Credentials)
+  date: string (YYYY-MM-DD)
+  readTime: string ("X min read")
+  category: string (mental-health | relationships | wellness | parenting | self-care)
+  tags: string[] (Topic tags)
+  image: string (Path, URL, or emoji)
+  additionalImages?: string[] (Gallery images)
+  featured: boolean (Show on featured section)
+}
+```
+
+Categories:
+- "all" (default, shows all articles)
+- "mental-health"
+- "relationships"
+- "wellness"
+- "parenting"
+- "self-care"
+
+🔗 URL STRUCTURE
+================
+
+/blog
+├── Lists all blog articles
+├── Featured articles section
+├── Category filter buttons
+└── All posts grid
+
+/blog/{slug}
+├── Individual article page
+├── Full formatted content
+├── Author information
+├── Related articles
+└── Share functionality
+
+Example:
+- /blog/infertility-and-suicide-breaking-the-silence
+- /blog/post-pregnancy-body-image-fighting-dysmorphia
+- /blog/coping-with-grief-and-loss
+
+📝 ARTICLES INCLUDED
+====================
+
+1. Infertility and Suicide: Breaking the Silence...
+   - Author: Sunayana Sukka (Ph.D in Psychology)
+   - Category: Mental Health
+   - Length: 6 min read
+   - Featured: YES
+
+2. Infertility and Trauma: How Mental Health Suffers in Silence
+   - Author: Dr. Sunayana Sukka (Ph.D in Psychology)
+   - Category: Mental Health
+   - Length: 7 min read
+   - Featured: YES
+
+3. Post-Pregnancy Body Image: Fighting Back Against Dysmorphia
+   - Author: Dr. Sunayana Sukka (PhD, Psychologist)
+   - Category: Wellness
+   - Length: 7 min read
+   - Featured: YES
+
+4. Does Anxiety Play a Role During Pregnancy?
+   - Author: Sunayana Sukka (PhD, Psychologist)
+   - Category: Mental Health
+   - Length: 10 min read
+   - Featured: NO
+
+5. Coping with Grief and Loss: Understanding the Healing Journey
+   - Author: S. Sunayana (Psychologist)
+   - Category: Wellness
+   - Length: 13 min read
+   - Featured: NO
+
+6. The Benefits of Couples Therapy: When to Seek Help and What to Expect
+   - Author: S. Sunayana (Psychologist)
+   - Category: Relationships
+   - Length: 14 min read
+   - Featured: NO
+
+🎨 KEY FEATURES
+===============
+
+Blog Listing Page (/blog):
+✅ Hero section with branding
+✅ Featured articles (3-column grid)
+✅ Category filter buttons (interactive)
+✅ All posts grid with real-time filtering
+✅ Responsive design (mobile/tablet/desktop)
+✅ Hover animations
+✅ Call-to-action section
+✅ Article count display
+
+Article Detail Page (/blog/{slug}):
+✅ Hero section with article title
+✅ Category badge
+✅ Publication date
+✅ Read time estimate
+✅ Author credentials
+✅ Featured image display
+✅ Additional images gallery
+✅ Formatted content parsing
+✅ Tags display
+✅ Share button (clipboard/native share)
+✅ Author bio section
+✅ Related articles suggestions
+✅ Call-to-action section
+
+Content Formatting Support:
+✅ ## Heading level 2
+✅ ### Heading level 3
+✅ **Bold text** (on own line)
+✅ - Bullet points
+✅ 1. Numbered lists
+✅ Regular paragraphs
+✅ Automatic spacing
+
+Image Handling:
+✅ Local paths (/public/images/...)
+✅ Remote URLs (http://...)
+✅ Emoji fallbacks
+✅ Responsive sizing
+✅ Lazy loading
+✅ Gallery support
+
+🛠️ HOW TO ADD NEW ARTICLE
+==========================
+
+Step 1: Create content and gather info
+- Write article in markdown-style format
+- Gather author name and credentials
+- Create/select feature image
+- Write excerpt (150-200 chars)
+- Estimate read time (250 words/min)
+- Select category
+- Create URL-friendly slug
+
+Step 2: Add to blog-data.ts
+```typescript
+{
+  id: 7,
+  slug: 'your-article-slug',
+  title: 'Your Article Title',
+  excerpt: 'Brief summary of article...',
+  content: `Your article content...
+
+  ## Section Heading
+
+  Paragraph text here...
+
+  - Bullet point
+  - Another point
+  `,
+  author: 'Author Name',
+  authorRole: 'Role/Credentials',
+  date: '2026-04-12',
+  readTime: '5 min read',
+  category: 'wellness',
+  tags: ['tag1', 'tag2', 'tag3'],
+  image: '/images/article-image.png',
+  featured: false,
+}
+```
+
+Step 3: Upload image
+- Save to /public/images/[name].png
+- Use local path in image field
+
+Step 4: Test
+- Navigate to /blog to verify listing
+- Click article to verify detail page
+- Test on mobile and desktop
+
+📊 CONTENT STATISTICS
+=====================
+
+Total Articles: 6
+Featured Articles: 3
+Total Word Count: ~15,000 words
+Average Article Length: 2,500 words
+Total Read Time: 57 minutes
+Categories Covered: 4 active categories
+
+Articles by Category:
+- Mental Health: 3
+- Wellness: 2
+- Relationships: 1
+- Parenting: 0
+- Self-Care: 0
+
+Articles by Author:
+- Sunayana Sukka: 6 (all articles)
+
+🎯 FILTERING LOGIC
+==================
+
+Category Filter (case-insensitive):
+```
+if (selected === "all") → show 6 articles
+if (selected === "mental-health") → show articles where category = "mental-health"
+if (selected === "wellness") → show articles where category = "wellness"
+if (selected === "relationships") → show articles where category = "relationships"
+```
+
+Filtering Algorithm:
+1. Normalize selection: trim().toLowerCase()
+2. Compare with post.category.trim().toLowerCase()
+3. Return matching posts or all if "all"
+
+⚙️ TECHNICAL DETAILS
+====================
+
+Frontend Framework: Next.js 13+ (App Router)
+Component Type: Client-side components ('use client')
+Styling: Tailwind CSS
+Animations: Framer Motion
+Image Component: Next/Image
+Icons: Lucide React
+
+Responsive Breakpoints:
+- Mobile: 320px - 640px
+- Tablet: 641px - 1024px
+- Desktop: 1025px+
+
+Color Scheme:
+- Primary: primary-50 to primary-700
+- Neutral: gray-50 to gray-900
+- Accent: Purple shades
+- Success: Green (on CTA)
+
+Performance:
+- Images lazy-loaded by default
+- Content rendered at page load
+- Category filter is instant (client-side)
+- No database queries needed
+- Static content optimal for static generation
+
+🔍 HELPER FUNCTIONS
+===================
+
+getBlogPostBySlug(slug: string)
+├─ Returns: BlogPost | undefined
+├─ Use: Fetch single article by slug
+└─ Example: const post = getBlogPostBySlug('article-slug')
+
+getBlogPostsByCategory(category: string)
+├─ Returns: BlogPost[]
+├─ Use: Get articles in specific category
+└─ Example: const posts = getBlogPostsByCategory('mental-health')
+
+getFeaturedBlogPosts()
+├─ Returns: BlogPost[]
+├─ Use: Get only featured articles
+└─ Example: const featured = getFeaturedBlogPosts()
+
+renderContent(content: string)
+├─ Returns: React.ReactNode[]
+├─ Use: Parse markdown-style content
+└─ Internal function in BlogPostContent
+
+🎬 ANIMATIONS
+=============
+
+Featured Posts:
+- Fade in on load
+- Slide up from bottom
+- Staggered timing (0.1s delay per item)
+- Lift on hover
+
+Blog Listings:
+- Fade and slide animations
+- Viewport-triggered (whileInView)
+- Smooth transitions
+
+Article Details:
+- Hero section fades in
+- Content slides up
+- Sections animate on scroll
+- Related posts staggered
+
+Navigation Links:
+- Arrow slides on hover
+- Color transitions
+- Pointer shows interactivity
+
+🐛 COMMON ISSUES & SOLUTIONS
+=============================
+
+Issue: Article not showing in featured section
+→ Solution: Set featured: true in blog-data.ts
+
+Issue: Image not displaying
+→ Solution: Use local path /images/... or full URL with http://
+→ Fallback: Use emoji instead
+
+Issue: Category filter not working
+→ Solution: Ensure category value in article matches exact category id
+→ Make sure to refresh page
+
+Issue: Content formatting looks wrong
+→ Solution: Check markdown-style format follows rules (## for h2, ### for h3, etc.)
+
+Issue: Content not rendering
+→ Solution: Check for syntax errors in JavaScript (quotes, brackets, etc.)
+
+📱 MOBILE CONSIDERATIONS
+========================
+
+Responsive Features:
+✅ Single column on mobile (md:grid-cols-2, lg:grid-cols-3)
+✅ Touch-friendly buttons and links
+✅ Readable font sizes (18px+)
+✅ Proper spacing and padding
+✅ Images scale to container width
+✅ Horizontal scroll on featured posts (optional)
+
+Mobile Optimizations:
+✅ Lazy loading images
+✅ Async font loading
+✅ Minimal animations on low-end devices
+✅ Efficient CSS (Tailwind purged)
+
+🔐 CONTENT SECURITY
+====================
+
+Safe Practices:
+✅ All content is hardcoded (no user input)
+✅ No external scripts loaded
+✅ Images from trusted sources
+✅ Links verified before deployment
+✅ No database connections needed
+
+To Add Dynamic Content Later:
+⚠️ Implement content sanitization
+⚠️ Use markdown-to-jsx library
+⚠️ Add rate limiting
+⚠️ Implement authentication
+⚠️ Add CSRF protection
+
+🚀 DEPLOYMENT NOTES
+===================
+
+Current Setup (Static):
+- Content built at deploy time
+- No runtime dependencies
+- Cache-friendly (CDN compatible)
+- Zero cold start time
+
+To Scale:
+1. Move to database if 100+ articles
+2. Implement revalidation strategy
+3. Add search index (Algolia, etc.)
+4. Consider CDN for images
+5. Add analytics tracking
+
+Build Command: npm run build
+Test Command: npm run dev
+Deploy: Same as main site (Vercel, etc.)
+
+📋 CHECKLIST FOR ARTICLE PUBLICATION
+====================================
+
+Before Publishing:
+☐ Article written and proofread
+☐ Author name and credentials verified
+☐ Category selected (one of 5)
+☐ Slug created (URL-friendly)
+☐ Featured image prepared
+☐ Excerpt written (150-200 chars)
+☐ Read time estimated
+☐ Tags created (3-5 tags)
+☐ Featured status decided
+☐ Code added to blog-data.ts
+
+Quality Assurance:
+☐ Tested on /blog listing page
+☐ Tested on article detail page
+☐ Tested on mobile device
+☐ Tested category filtering
+☐ Tested related articles
+☐ Tested social share button
+☐ Links verified
+☐ No broken images
+☐ Formatting correct
+☐ No typos
+
+Post-Publication:
+☐ Verify live on production
+☐ Test all links
+☐ Check image display
+☐ Monitor analytics
+☐ Collect reader feedback
+
+END OF QUICK REFERENCE
+======================
+
+For detailed technical information, see:
+- BLOG_FEATURE_DOCUMENTATION.txt
+- VERSION_2_CHANGES.txt
+- Individual component source files

@@ -1,0 +1,65 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Post-pregnancy body image awareness poster</title>
+  <desc id="desc">An upscaled awareness visual about post-pregnancy body image and dysmorphia recovery.</desc>
+  <defs>
+    <linearGradient id="bgTop" x1="0" y1="0" x2="1600" y2="650" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ECE7DF"/>
+      <stop offset="1" stop-color="#F5F3EF"/>
+    </linearGradient>
+    <linearGradient id="overlay" x1="0" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#000000" stop-opacity="0.56"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.48"/>
+    </linearGradient>
+    <linearGradient id="bottomFade" x1="800" y1="880" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D0D0F"/>
+      <stop offset="1" stop-color="#7A1B1B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1200" fill="url(#bgTop)"/>
+
+  <g>
+    <rect x="0" y="0" width="1600" height="740" fill="#D6C8B6"/>
+    <ellipse cx="800" cy="350" rx="620" ry="290" fill="#C8B9A8"/>
+
+    <path d="M620 176C664 124 746 90 838 90C928 90 1012 124 1056 176C1028 178 994 190 964 214C938 236 914 266 888 292C860 320 826 340 780 340C734 340 700 320 672 292C646 266 622 236 596 214C566 190 532 178 504 176C548 124 632 90 722 90C684 90 650 122 620 176Z" fill="#9C7F66"/>
+
+    <rect x="522" y="130" width="556" height="220" rx="22" fill="#D9CCBC"/>
+    <text x="800" y="274" text-anchor="middle" font-family="Georgia, serif" font-size="132" font-weight="700" fill="#1F1F25">Mother</text>
+
+    <path d="M520 392C580 360 662 338 760 338H840C938 338 1020 360 1080 392V720H520V392Z" fill="#D2B59D"/>
+    <ellipse cx="800" cy="560" rx="214" ry="196" fill="#E6C7AE"/>
+    <path d="M670 540C708 498 780 484 860 496C928 506 980 542 990 592C976 580 956 570 930 562C884 548 838 552 796 566C748 582 708 610 682 644C666 626 654 604 650 580C646 562 652 550 670 540Z" fill="#DCAE90"/>
+    <path d="M650 620C708 684 794 714 900 698" stroke="#C18F74" stroke-width="8" stroke-linecap="round"/>
+    <path d="M940 390L1085 744" stroke="#D2B59D" stroke-width="22" stroke-linecap="round"/>
+    <path d="M525 390L432 736" stroke="#D2B59D" stroke-width="22" stroke-linecap="round"/>
+    <path d="M1008 550C1048 544 1078 562 1102 602" stroke="#6B4D3A" stroke-width="7" stroke-linecap="round"/>
+    <text x="1118" y="698" transform="rotate(-60 1118 698)" font-family="Georgia, serif" font-size="40" fill="#6B4D3A">POSTPARTUM</text>
+  </g>
+
+  <rect x="0" y="252" width="1600" height="232" fill="url(#overlay)"/>
+  <text x="800" y="360" text-anchor="middle" font-family="Georgia, serif" font-size="68" font-weight="700" fill="#FFFFFF">Post-Pregnancy Body Image:</text>
+  <text x="800" y="438" text-anchor="middle" font-family="Georgia, serif" font-size="62" fill="#FFFFFF">How New Moms Can Fight Back Against Dysmorphia</text>
+
+  <rect x="0" y="740" width="1600" height="460" fill="url(#bottomFade)"/>
+  <g>
+    <rect x="0" y="740" width="530" height="360" fill="#D9DCE0"/>
+    <rect x="535" y="740" width="530" height="360" fill="#F0F2F4"/>
+    <rect x="1070" y="740" width="530" height="360" fill="#CCD8E2"/>
+
+    <path d="M74 1040C106 894 208 828 326 826C444 828 546 894 578 1040" fill="#111317" fill-opacity="0.82"/>
+    <circle cx="308" cy="840" r="64" fill="#E2BFA9"/>
+    <path d="M258 812C270 778 300 756 334 758C362 760 388 777 399 805C374 798 344 798 319 809C301 816 286 827 275 842C263 834 256 825 258 812Z" fill="#5B3A2E"/>
+    <circle cx="220" cy="836" r="40" fill="#F4D5BE"/>
+
+    <path d="M610 1052C646 912 740 842 852 842C964 842 1058 912 1094 1052" fill="#0F1016" fill-opacity="0.84"/>
+    <circle cx="850" cy="840" r="66" fill="#EDC8B0"/>
+    <path d="M796 810C813 770 853 747 894 754C928 760 958 787 968 822C936 811 897 811 864 824C843 832 825 845 811 861C795 846 789 826 796 810Z" fill="#2F2B3C"/>
+    <circle cx="912" cy="1016" r="52" fill="#F3DFC8"/>
+
+    <path d="M1120 1054C1152 920 1238 852 1345 852C1452 852 1538 920 1570 1054" fill="#12151C" fill-opacity="0.83"/>
+    <circle cx="1342" cy="848" r="62" fill="#E9C8B2"/>
+    <path d="M1292 815C1307 778 1343 756 1381 760C1414 763 1443 786 1454 818C1425 809 1388 809 1357 820C1338 827 1322 838 1309 853C1295 843 1289 829 1292 815Z" fill="#4D3544"/>
+    <path d="M1275 957C1290 986 1311 1008 1338 1024C1365 1008 1386 986 1402 957" stroke="#EAEFF7" stroke-width="8" stroke-linecap="round"/>
+  </g>
+</svg>

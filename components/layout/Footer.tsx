@@ -28,7 +28,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-3">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/people/Saheeli-Counselling-Services/61574367268112/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition-colors"
@@ -36,7 +36,7 @@ export default function Footer() {
                 <Facebook className="h-4 w-4" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/saheeli_counsellingservices_?utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition-colors"
@@ -125,12 +125,12 @@ export default function Footer() {
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-primary-400 mt-0.5 flex-shrink-0" />
                 <a
-                  href="https://www.google.com/maps/place/Oval+Fertility/@17.4214518,78.4459674,17z/data=!4m10!1m2!2m1!1soval+fertility+hyderabad!3m6!1s0x3bcb97b60ea871c9:0xa209182db70d8e48!8m2!3d17.4214085!4d78.4485162!15sChhvdmFsIGZlcnRpbGl0eSBoeWRlcmFiYWSSARBmZXJ0aWxpdHlfY2xpbmlj4AEA!16s%2Fg%2F11y_gxl78q?entry=ttu&g_ep=EgoyMDI2MDMwMS4xIKXMDSoASAFQAw%3D%3D"
+                  href="https://www.google.com/maps/place/Hyderabad,+Telangana+500052/@17.3118627,78.3748778,28164m/data=!3m1!1e3!4m6!3m5!1s0x3bcbbd8396733feb:0xb6f0d002229a856e!8m2!3d17.3216709!4d78.431866!16s%2Fg%2F1hhh728zt?entry=ttu&g_ep=EgoyMDI2MDMyOS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm hover:text-primary-400 transition-colors"
                 >
-                  2nd Floor, Sattva Signature Tower, Oval Fertility, Banjara Hills Rd Number 1, Hyderabad, Telangana 500034
+                  Hyderabad, Telangana, India, 500052
                 </a>
               </li>
               <li className="flex items-center space-x-3">
@@ -141,8 +141,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary-400 flex-shrink-0" />
-                <a href="mailto:Gudurisunayana@gmail.com" className="text-sm hover:text-primary-400 transition-colors">
-                  Gudurisunayana@gmail.com
+                <a href="mailto:Saheelicounselling@gmail.com" className="text-sm hover:text-primary-400 transition-colors">
+                  Saheelicounselling@gmail.com
                 </a>
               </li>
             </ul>

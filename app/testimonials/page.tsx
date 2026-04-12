@@ -35,7 +35,7 @@ const testimonials = [
     service: 'Anxiety Management',
     rating: 5,
     quote:
-      'I came in overwhelmed by constant anxiety and sleepless nights. With guided therapy and practical tools, I now feel calmer, more confident, and finally in control of my thoughts.',
+      'I was constantly stressed and couldn\'t sleep at night. The anxiety was making me go crazy. When I came here, the sessions and practical tips gave me a completely new perspective. Now I feel very calm, my confidence is much better, and I can control my own thoughts properly.',
     improvement: 'Reduced panic episodes and better daily coping',
     months: '4 months',
     icon: Heart,
@@ -47,7 +47,7 @@ const testimonials = [
     service: 'Couples Therapy',
     rating: 5,
     quote:
-      'We were struggling to communicate without arguments. Therapy helped us truly listen to each other and rebuild trust. Our relationship feels stronger than ever.',
+      'Both of us were constantly arguing and not understanding each other at all. Every small thing was causing fights. When we came here, we finally learned how to properly listen to each other and understand what the other person is feeling. Now our relationship is really strong and we enjoy each other\'s company.',
     improvement: 'Healthier communication and emotional connection',
     months: '6 months',
     icon: Users,
@@ -59,54 +59,18 @@ const testimonials = [
     service: 'Mental Health Counseling',
     rating: 5,
     quote:
-      'I had been carrying stress and burnout for years. The sessions gave me clarity, boundaries, and better self-care habits. I feel like myself again.',
+      'For so many years I was carrying stress and I completely forgot about myself. It was only work and work every day. The burnout had become so bad that my health was getting worse. These sessions helped me understand that taking care of myself is actually very important. Now my life is properly balanced and I have gotten my confidence back.',
     improvement: 'Improved work-life balance and confidence',
     months: '3 months',
     icon: Star,
   },
-  {
-    id: 4,
-    name: 'Anonymous Parent',
-    role: 'Parent',
-    service: 'Child Counseling',
-    rating: 5,
-    quote:
-      'Our child was facing emotional outbursts and school stress. The therapist created such a safe and caring space. We’ve seen meaningful progress at home and school.',
-    improvement: 'Better emotional regulation and family harmony',
-    months: '5 months',
-    icon: Heart,
-  },
-  {
-    id: 5,
-    name: 'Karan T.',
-    role: 'Entrepreneur',
-    service: 'Emotional Resilience Training',
-    rating: 5,
-    quote:
-      'The resilience sessions changed how I handle setbacks. I’ve developed healthier thought patterns and practical strategies that help me lead with focus.',
-    improvement: 'Stronger resilience under pressure',
-    months: '4 months',
-    icon: CheckCircle,
-  },
-  {
-    id: 6,
-    name: 'Anonymous Client',
-    role: 'Healthcare Worker',
-    service: 'Grief & Loss Support',
-    rating: 5,
-    quote:
-      'I was grieving and felt completely lost. Therapy gave me a safe place to process pain and slowly heal. I am deeply grateful for the compassionate support.',
-    improvement: 'Healthier grief processing and emotional stability',
-    months: '7 months',
-    icon: Shield,
-  },
 ];
 
 const stats = [
-  { label: 'Happy Clients', value: '500+' },
-  { label: 'Average Rating', value: '4.9/5' },
+  { label: 'Happy Clients', value: '1000+' },
+  { label: 'Average Rating', value: '4.8/5' },
   { label: 'Success Stories', value: '96%' },
-  { label: 'Years of Care', value: '15+' },
+  { label: 'Years of Care', value: '8+' },
 ];
 
 export default function TestimonialsPage() {

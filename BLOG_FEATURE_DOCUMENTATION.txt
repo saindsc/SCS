@@ -1,0 +1,502 @@
+BLOG FEATURE - TECHNICAL DOCUMENTATION
+======================================
+
+PROJECT: Saheeli Counselling Services (SCS) Website
+VERSION: 2.1
+IMPLEMENTATION DATE: 2026-04-12
+
+TABLE OF CONTENTS
+=================
+1. Overview
+2. File Structure
+3. Data Architecture
+4. Component Details
+5. User Experience Flow
+6. Content Management
+7. Future Extensions
+
+1. OVERVIEW
+===========
+The blog feature allows the SCS website to publish mental health articles, manage content through a centralized data system, and provide readers with:
+- Article discovery through category filtering
+- In-depth article viewing with related content
+- Social sharing capabilities
+- Author credentials display
+- Rich content formatting support
+
+Technology Stack:
+- Framework: Next.js (React)
+- Styling: Tailwind CSS
+- Animations: Framer Motion
+- Language: TypeScript
+- Image Handling: Next.js Image component
+
+2. FILE STRUCTURE
+=================
+
+Core Files:
+-----------
+lib/blog-data.ts
+├── BlogPost Interface
+├── blogCategories Array
+├── blogPosts Array (6 articles)
+└── Utility Functions
+    ├── getBlogPostBySlug()
+    ├── getBlogPostsByCategory()
+    └── getFeaturedBlogPosts()
+
+app/blog/page.tsx
+├── Blog Listing Page
+├── Hero Section
+├── Featured Posts Grid
+├── Category Filter
+├── All Posts Grid
+└── CTA Section
+
+app/blog/[slug]/BlogPostContent.tsx
+├── Dynamic Post Detail Component
+├── Hero Section with Meta
+├── Featured Image
+├── Additional Images Gallery
+├── Formatted Content Display
+├── Tags Section
+├── Share Functionality
+├── Author Bio
+├── Related Posts
+└── CTA Section
+
+Related Files (Layout/Parent):
+- app/blog/[slug]/page.tsx (Route handler - not shown in task)
+- app/layout.tsx (Root layout)
+
+Image Assets:
+- /public/images/I&T.png (Infertility & Trauma)
+- /public/images/L1.png (Supporting image)
+- /public/images/L2.png (Post-Pregnancy body image)
+- /public/images/L3.png (Supporting image)
+- /public/images/L5.png (Pregnancy anxiety)
+- /public/images/blog/ (Directory for future blog images)
+
+3. DATA ARCHITECTURE
+====================
+
+BlogPost Interface Structure:
+-----------------------------
+{
+  id: number
+  slug: string (URL-friendly identifier, e.g., "infertility-and-suicide-breaking-the-silence")
+  title: string (Display heading for article)
+  excerpt: string (Short summary, <200 characters)
+  content: string (Main article body - markdown-style format)
+  author: string (Writer name)
+  authorRole: string (Professional credential/title)
+  date: string (ISO format YYYY-MM-DD)
+  readTime: string (Estimated read duration, e.g., "6 min read")
+  category: string (One of: mental-health, relationships, wellness, parenting, self-care)
+  tags: string[] (Array of related topic tags)
+  image: string (Feature image - path, URL, or emoji)
+  additionalImages?: string[] (Optional gallery images)
+  featured: boolean (Display in featured section on main blog page)
+}
+
+Blog Categories:
+----------------
+All
+├── Mental Health (id: mental-health)
+├── Relationships (id: relationships)
+├── Wellness (id: wellness)
+├── Parenting (id: parenting)
+└── Self-Care (id: self-care)
+
+Content Format Reference:
+-------------------------
+The content field uses markdown-style formatting that is parsed by renderContent():
+
+## Heading Level 2
+### Heading Level 3
+**Bold Text (on own line)**
+- Bullet point
+  (Renders as unordered list)
+1. Numbered item
+  (Renders as ordered list)
+Regular paragraph text
+
+Example article structure:
+- Intro paragraph
+- ## Main Topic Heading
+- Several body paragraphs
+- ### Subtopic
+- More paragraphs
+- - Bullet points with details
+- ## Another Section
+- Conclusion
+
+4. COMPONENT DETAILS
+====================
+
+A. BlogPostContent.tsx
+======================
+File: app/blog/[slug]/BlogPostContent.tsx
+Type: Client-side Component ('use client')
+Lines: 448
+
+Imports:
+- React hooks
+- motion from framer-motion
+- Link from next/link
+- Image from next/image
+- Icons from lucide-react (Calendar, Clock, User, Share2, ArrowRight, Tag)
+- blogCategories from config
+
+Key Functions:
+--------------
+1. isLocalImage(value: string) → boolean
+   Purpose: Detect if image is a local file path
+   Returns: true if path starts with "/"
+
+2. isRemoteImage(value: string) → boolean
+   Purpose: Detect if image is a remote URL
+   Returns: true if URL starts with "http://" or "https://"
+
+3. renderContent(content: string) → React.ReactNode[]
+   Purpose: Parse markdown-style content and return JSX elements
+
+   Parsing Rules:
+   - Empty lines: <div className="h-4" /> (spacing)
+   - "## " prefix: h2 element
+   - "### " prefix: h3 element
+   - "** **" wrapped: bold paragraph
+   - "- " prefix: list item
+   - "N. " prefix: numbered list item
+   - Other: regular paragraph
+
+4. handleShare() → Promise
+   Purpose: Share article via browser Share API or clipboard
+   Behavior:
+   - Try navigator.share() if available
+   - Fallback to clipboard.writeText()
+   - Show user notification
+
+Component Props:
+----------------
+interface BlogPostContentProps {
+  post: BlogPost
+  relatedPosts: BlogPost[]
+}
+
+Usage in Route:
+- Receives post data from route handler
+- Receives related posts array (typically same category, different article)
+
+Styling Approach:
+- Tailwind CSS utility classes
+- Responsive breakpoints: sm, md, lg
+- Color tokens: primary-500, purple-600, gray-900, white, etc.
+- Gradients for visual emphasis
+- Drop shadows for depth
+
+Animations:
+- Motion divs with fadeInUp pattern
+- Initial { opacity: 0, y: 30 }
+- Animate { opacity: 1, y: 0 }
+- whileInView for scroll-triggered animations
+- whileHover for interactive elements
+
+B. BlogPage (page.tsx)
+======================
+File: app/blog/page.tsx
+Type: Client-side Component ('use client')
+Lines: 262
+
+State Management:
+- selectedCategory: string (user's category filter, default: "all")
+
+Data Loading:
+- blogPosts: imported array of all posts
+- blogCategories: imported array of categories
+- featuredPosts: computed from getFeaturedBlogPosts()
+- filteredPosts: computed based on selectedCategory
+
+Filtering Logic:
+```
+Normalize selected category: trim().toLowerCase()
+If normalized = "all": return all posts
+Else: return posts where category.trim().toLowerCase() === normalized
+```
+
+Rendering:
+1. Hero Section (60vh)
+   - Background gradient
+   - Centered text content
+   - Icon badge
+   - Main heading
+   - Subheading
+
+2. Featured Posts (3 columns)
+   - Uses getFeaturedBlogPosts()
+   - Card-based layout
+   - Links to /blog/{slug}
+   - Hover animations
+
+3. Category Filter (horizontal buttons)
+   - 6 buttons (one per category)
+   - onClick updates selectedCategory
+   - Conditional styling for active state
+   - Active button: primary gradient + shadow
+   - Inactive button: gray background
+
+4. All Posts Grid
+   - Responsive columns: md:2, lg:3
+   - Filtered based on selected category
+   - Shows count of articles
+   - Empty state message if 0 articles
+
+5. CTA Section
+   - Dark background
+   - Two action buttons
+   - Links to appointment booking and services
+
+5. USER EXPERIENCE FLOW
+=======================
+
+First-Time Reader:
+1. Land on /blog page
+2. See featured articles (3 most important)
+3. Choose category from filter buttons
+4. Browse filtered articles in grid
+5. Click on article to read full content
+6. On article page:
+   - Read full content with formatting
+   - See author credentials
+   - View related articles
+   - Share article with network
+   - Book appointment or explore services
+7. Navigate back to blog or explore related content
+
+Returning Reader:
+1. Land on /blog page
+2. Filter by specific category of interest
+3. Click on article
+4. Share valuable content
+5. Book appointment if inspired
+
+Search/Direct Navigation:
+- User pastes /blog/{slug} directly
+- Dynamic route loads specific article
+- Related articles shown for discovery
+
+6. CONTENT MANAGEMENT
+=====================
+
+Adding New Articles:
+---------------------
+1. Add entry to blogPosts array in lib/blog-data.ts
+2. Follow BlogPost interface structure
+3. Use markdown-style formatting for content
+4. Set featured: true/false appropriately
+5. Ensure unique slug (URL-friendly identifier)
+6. Select from existing categories
+7. Add author and authorRole
+8. Set read time estimate
+9. Create tags array for discoverability
+10. Upload feature image (or use emoji)
+
+Content Best Practices:
+- Titles: 50-60 characters (SEO, readability)
+- Excerpts: 150-200 characters
+- Content: Use ## headers for sections
+- Tags: 3-5 relevant tags per article
+- Images: Use local paths (/images/...) where possible
+- Read Time: ~250 words per minute
+- Author: List credentials (e.g., "Ph.D in Psychology")
+
+Updating Existing Articles:
+1. Find article by slug in blogPosts
+2. Edit content field
+3. Update date if significant changes
+4. Maintain featured flag
+5. Test rendering on /blog/{slug}
+
+Modifying Categories:
+1. Edit blogCategories array in blog-data.ts
+2. Update category IDs in articles
+3. Ensure no articles reference deleted categories
+4. Update page.tsx filtering logic if needed
+
+Image Management:
+- Local images: Store in /public/images/
+- Subdirectories: /public/images/blog/ for blog-specific images
+- Formats: PNG, JPG, WebP supported
+- Sizing: Use Next.js Image component for optimization
+- Fallback: Use emoji for quick implementation
+
+7. FUTURE EXTENSIONS
+====================
+
+Potential Enhancements:
+-----------------------
+
+1. Search Functionality
+   - Add search input to /blog page
+   - Filter articles by title/content
+   - Highlight matching terms
+   - Search analytics
+
+2. Pagination
+   - Limit articles per page (10-15)
+   - Add prev/next navigation
+   - Show page numbers
+   - Maintain category filter across pages
+
+3. Comments System
+   - Add comment section below articles
+   - Moderation workflow
+   - Nested replies
+   - Author responses
+
+4. Reading Stats
+   - Track reading progress
+   - Estimated read time accuracy
+   - Reading experience feedback
+   - Analytics integration
+
+5. Author Pages
+   - /blog/author/{name} routes
+   - Author bio and credentials
+   - All articles by author
+   - Author contact/booking
+
+6. Article Scheduling
+   - Move to database
+   - Schedule publish dates
+   - Draft/published status
+   - Automated email notifications
+
+7. Related Articles Enhancement
+   - Smarter algorithm (shared tags, category)
+   - Manual selection option
+   - Randomization for variety
+   - Click tracking
+
+8. Newsletter Integration
+   - Subscribe form on blog
+   - Email digest of new articles
+   - Category-specific subscriptions
+   - Unsubscribe management
+
+9. Internationalization
+   - Translate articles
+   - Language switcher
+   - RTL support for Hindi
+   - Country-specific content
+
+10. Content Management System (CMS)
+    - Move blogPosts from code to database
+    - Admin interface for article management
+    - Rich text editor instead of markdown
+    - Scheduled publishing
+    - Version history
+    - Collaboration features
+
+Database Schema (if migrating):
+```
+articles table:
+- id (UUID)
+- slug (unique string)
+- title
+- excerpt
+- content
+- author_id (FK)
+- category_id (FK)
+- featured (boolean)
+- published_at (timestamp)
+- created_at (timestamp)
+- updated_at (timestamp)
+
+categories table:
+- id (string)
+- name
+- description
+
+authors table:
+- id (UUID)
+- name
+- role
+- bio
+- credentials
+
+article_images table:
+- id (UUID)
+- article_id (FK)
+- image_path
+- alt_text
+- order
+
+article_tags table:
+- article_id (FK)
+- tag_id (FK)
+```
+
+API Endpoints (if adding backend):
+```
+GET /api/blog - list articles with pagination
+GET /api/blog/:slug - get single article
+GET /api/blog/category/:id - filter by category
+GET /api/categories - list categories
+POST /api/blog (admin) - create article
+PUT /api/blog/:id (admin) - update article
+DELETE /api/blog/:id (admin) - delete article
+GET /api/blog/:slug/related - get related articles
+```
+
+MAINTENANCE NOTES
+=================
+
+Regular Tasks:
+- Review article dates quarterly
+- Update featured articles seasonally
+- Monitor for broken image links
+- Check external links in content
+- Update author credentials when needed
+- Archive outdated mental health advice
+
+Performance Considerations:
+- Image lazy loading enabled
+- Content parsing done at render time (consider memoization for large articles)
+- Category filtering is O(n) where n = total articles
+- Consider pagination if articles exceed 50+
+
+Accessibility:
+- All images have alt text
+- Heading hierarchy maintained (h1 → h2 → h3)
+- Color contrast meets WCAG standards
+- Links have meaningful text
+- Share button has proper labels
+
+SEO Optimization:
+- Each article is individual page (crawlable)
+- Meta descriptions in excerpts
+- Structured headings for content outline
+- Internal links to related articles
+- Author credentials for E-A-T (Expertise, Authoritativeness, Trustworthiness)
+
+ERROR HANDLING:
+
+If article slug not found:
+- Route handler should show 404
+- Fallback to blog listing
+
+If image fails to load:
+- Next.js fallback gray placeholder
+- Emoji fallback displays
+
+If no articles in category:
+- Show "No articles found in this category" message
+- Suggest browsing all articles
+
+If renderContent() encounters edge case:
+- Falls back to rendering as paragraph
+- No blank content sections
+
+END OF DOCUMENTATION
+====================

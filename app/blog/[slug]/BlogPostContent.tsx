@@ -24,6 +24,7 @@ interface BlogPost {
   authorRole: string;
   category: string;
   image: string;
+  additionalImages?: string[];
   tags: string[];
 }
 
@@ -33,8 +34,7 @@ interface BlogPostContentProps {
 }
 
 const isLocalImage = (value: string) => value.startsWith('/');
-const BLOG_AUTHOR_NAME = 'S. Sunayana';
-const BLOG_AUTHOR_ROLE = 'Psychologist';
+const isRemoteImage = (value: string) => value.startsWith('http://') || value.startsWith('https://');
 
 const renderContent = (content: string) => {
   return content.split('\n').map((line, index) => {
@@ -171,8 +171,8 @@ export default function BlogPostContent({ post, relatedPosts }: BlogPostContentP
             <div className="flex items-center space-x-4 pt-4">
               <User className="h-12 w-12 text-white/80" />
               <div>
-                <div className="text-lg font-semibold text-white">{BLOG_AUTHOR_NAME}</div>
-                <div className="text-white/80">{BLOG_AUTHOR_ROLE}</div>
+                <div className="text-lg font-semibold text-white">{post.author}</div>
+                <div className="text-white/80">{post.authorRole}</div>
               </div>
             </div>
           </motion.div>
@@ -188,7 +188,7 @@ export default function BlogPostContent({ post, relatedPosts }: BlogPostContentP
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative overflow-hidden bg-gradient-to-br from-primary-400 to-purple-400 rounded-3xl shadow-2xl h-96 flex items-center justify-center text-9xl"
           >
-            {isLocalImage(post.image) ? (
+            {isLocalImage(post.image) || isRemoteImage(post.image) ? (
               <Image
                 src={post.image}
                 alt={post.title}
@@ -203,6 +203,38 @@ export default function BlogPostContent({ post, relatedPosts }: BlogPostContentP
           </motion.div>
         </div>
       </section>
+
+      {post.additionalImages && post.additionalImages.length > 0 && (
+        <section className="relative mt-6">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-4 sm:grid-cols-2">
+              {post.additionalImages.map((imgSrc, index) => (
+                <motion.div
+                  key={imgSrc}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.45, delay: 0.08 * (index + 1) }}
+                  className="relative h-64 overflow-hidden rounded-2xl border border-gray-100 bg-gray-100 shadow-lg"
+                >
+                  {isLocalImage(imgSrc) || isRemoteImage(imgSrc) ? (
+                    <Image
+                      src={imgSrc}
+                      alt={`${post.title} reference image ${index + 1}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  ) : (
+                    <div className="flex h-full items-center justify-center px-4 text-sm text-gray-500">
+                      {imgSrc}
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Content */}
       <article className="py-16">
@@ -287,10 +319,10 @@ export default function BlogPostContent({ post, relatedPosts }: BlogPostContentP
             <div className="flex items-start space-x-6">
               <User className="h-16 w-16 text-primary-600 flex-shrink-0" />
               <div className="flex-1">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">About {BLOG_AUTHOR_NAME}</h3>
-                <p className="text-primary-600 font-semibold mb-4">{BLOG_AUTHOR_ROLE}</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">About {post.author}</h3>
+                <p className="text-primary-600 font-semibold mb-4">{post.authorRole}</p>
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  {BLOG_AUTHOR_NAME} is an experienced mental health professional at Saheeli Counselling,
+                  {post.author} is an experienced mental health professional at Saheeli Counselling,
                   dedicated to helping clients achieve lasting wellness and personal growth through
                   evidence-based therapeutic approaches.
                 </p>

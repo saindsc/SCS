@@ -133,6 +133,38 @@ export const servicesData: Service[] = [
       'More positive outlook and mental flexibility',
     ],
   },
+  {
+    id: '11',
+    slug: 'career-counseling',
+    title: 'Career Counseling',
+    shortDescription: 'Get clarity and confidence in your career decisions with structured guidance and personalized planning.',
+    iconName: 'Lightbulb',
+    color: 'from-indigo-500 to-blue-600',
+    category: 'general',
+    detailedDescription: 'Career Counseling helps you make informed, confident decisions about your professional path. Whether you are a student choosing a direction, a working professional considering a switch, or someone feeling stuck and unfulfilled, we help you identify your strengths, interests, values, and long-term goals. Through structured assessment and one-to-one guidance, we support you in creating a practical, realistic roadmap for career growth and satisfaction.',
+    howItWorks: [
+      'Career Assessment: Understand your strengths, interests, values, and work preferences.',
+      'Current Situation Review: Evaluate your academic background, experience, and present challenges.',
+      'Goal Clarification: Define short-term and long-term career goals aligned with your profile.',
+      'Action Plan: Build a practical step-by-step roadmap for skill development, transitions, or job readiness.',
+      'Ongoing Guidance: Review progress, remove blockers, and refine your plan as needed.',
+    ],
+    whoItsFor: [
+      'Students choosing higher education or career pathways',
+      'Young professionals uncertain about job direction',
+      'Working professionals planning a career transition',
+      'Individuals returning to work after a career break',
+      'Anyone seeking clarity, purpose, and confidence in career decisions',
+    ],
+    benefits: [
+      'Clearer career direction and decision-making',
+      'Improved confidence in professional choices',
+      'Better alignment between strengths and career path',
+      'Practical action plan for growth and transitions',
+      'Reduced confusion, stress, and career-related anxiety',
+      'Greater long-term career satisfaction and motivation',
+    ],
+  },
 
   // Relationship Services
   {

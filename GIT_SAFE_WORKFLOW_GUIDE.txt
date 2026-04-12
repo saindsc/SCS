@@ -1,0 +1,246 @@
+SCS Git and Vercel Safety Guide
+Date: 2026-03-31
+
+Purpose
+This guide helps you make code changes safely without disturbing the currently working production version.
+
+==================================================
+1) Stable Tag: What It Is and Why to Use It
+==================================================
+
+What is a stable tag?
+- A tag is a permanent label attached to one specific commit.
+- Think of it as a bookmark saying: "this version is known-good."
+
+Why use a stable tag?
+- Easy rollback target if future changes break something.
+- Clear history of major stable releases.
+- Useful for team communication (everyone can point to the same known version).
+
+When to create a stable tag?
+- Right before big refactors.
+- Right before major design/content changes.
+- After production is verified and working perfectly.
+
+Commands to create and push a stable tag
+1. Move to main and get latest code:
+   git checkout main
+   git pull origin main
+
+2. Create an annotated tag:
+   git tag -a stable-2026-03-31 -m "Stable before about/contact updates"
+
+3. Push that tag to GitHub:
+   git push origin stable-2026-03-31
+
+4. Verify tags locally:
+   git tag
+
+5. Verify tag details:
+   git show stable-2026-03-31
+
+How to delete a tag (if you made a mistake)
+- Delete local tag:
+  git tag -d stable-2026-03-31
+- Delete remote tag:
+  git push origin --delete stable-2026-03-31
+
+==================================================
+2) Best Safe Workflow (Use This Every Time)
+==================================================
+
+Goal
+- Keep production safe.
+- Test changes in a branch preview first.
+- Merge only after verification.
+
+Step A: Start from clean and updated main
+- Why: prevents stale branch issues and merge confusion.
+Commands:
+  git checkout main
+  git pull origin main
+  git status
+
+Step B: Create a feature branch
+- Why: isolates your new work from production.
+Command pattern:
+  git checkout -b feature/short-clear-name
+Example:
+  git checkout -b feature/about-education-order
+
+Step C: Run and test locally
+- Why: catch mistakes before commit.
+Commands:
+  npm install
+  npm run dev
+- Open: http://localhost:3000
+- After testing: press Ctrl + C to stop dev server.
+
+Step D: Save work with commit
+- Why: commit is your checkpoint in git history.
+Commands:
+  git status
+  git add .
+  git commit -m "Your clear change message"
+
+Step E: Push branch to GitHub
+- Why: creates cloud backup and enables Vercel preview.
+Commands:
+  git push -u origin feature/short-clear-name
+- Next pushes on same branch can use:
+  git push
+
+Step F: Review Vercel Preview Deployment
+- Why: test branch changes in near-production environment.
+- Open the preview URL from Vercel/GitHub PR checks.
+- Verify key pages and actions.
+
+Step G: Merge to main only after preview is good
+- Why: protects production from untested code.
+- Merge PR into main.
+- Vercel auto-deploys main to production (if auto-deploy is enabled).
+
+==================================================
+3) All Safety Methods (Detailed)
+==================================================
+
+Method 1: Branch-based development
+- Use a new branch for each feature/fix.
+- Never develop directly on main.
+Benefits:
+- Zero disturbance to live production.
+- Easy PR review and isolated testing.
+
+Method 2: Stable tags before risky work
+- Create tags before big changes.
+Benefits:
+- Fast known-good restore point.
+- Better release traceability.
+
+Method 3: Remote GitHub backup (origin)
+- Your local machine can fail; GitHub is the remote backup.
+Check remotes:
+  git remote -v
+Benefits:
+- Off-machine backup.
+- Team visibility and collaboration.
+- Required for Vercel Git-based deployments.
+
+Method 4: Vercel preview first, production later
+- Push branch first -> preview deployment.
+- Merge to main only if preview passes.
+Benefits:
+- Production stays stable.
+- Realistic testing before go-live.
+
+Method 5: Optional zip snapshot before major refactor
+- Create a manual backup zip of the full project folder.
+Suggested naming:
+  SCS_backup_before_refactor_2026-03-31.zip
+Benefits:
+- Extra emergency copy outside git.
+- Useful if you want a quick folder-level restore.
+Note:
+- Zip backup is optional. Branch + tag + GitHub are primary protections.
+
+Method 6: Small, frequent commits
+- Commit in logical chunks.
+Benefits:
+- Easier debugging and rollback.
+- Cleaner commit history.
+
+Method 7: Quick checks before pushing
+Commands:
+  git status
+  git log --oneline -5
+  npm run dev
+Benefits:
+- Avoid accidental files.
+- Verify recent history and basic app health.
+
+==================================================
+3.1) PR Optional vs PR Mandatory (Quick Decision)
+==================================================
+
+Use PR mandatory in these cases
+- Any change that can affect production behavior.
+- Any UI/content update that must be reviewed before go-live.
+- Any backend/config/env change.
+- Any multi-file change.
+- Any change where rollback risk is high.
+
+PR can be optional in these limited cases
+- Personal sandbox branch experiments that will never be merged.
+- Very small local test edits that you will discard.
+- Emergency direct hotfix only if you fully understand the impact.
+
+Decision table
+- If this change can break user experience: Use PR (mandatory).
+- If this change touches main deployment path: Use PR (mandatory).
+- If this is only a temporary local experiment: PR optional.
+- If unsure: always use PR.
+
+Recommended default for SCS
+- Treat PR as mandatory for all branch-to-main merges.
+- This gives a final review gate and safer Vercel preview validation.
+
+==================================================
+4) Rollback and Recovery Commands
+==================================================
+
+Case A: Undo uncommitted local changes in one file
+  git restore app/about/page.tsx
+
+Case B: Undo all uncommitted changes (dangerous)
+  git restore 
+
+Case C: Move to a stable tag for checking
+  git checkout stable-2026-03-31
+
+Case D: Create a recovery branch from stable tag
+  git checkout -b hotfix/from-stable stable-2026-03-31
+
+Case E: Revert a bad commit already pushed
+1. Find commit hash:
+   git log --oneline
+2. Revert it:
+   git revert <commit-hash>
+3. Push:
+   git push
+
+==================================================
+5) Recommended Naming Conventions
+==================================================
+
+Branch names
+- feature/about-education-order
+- fix/contact-form-validation
+- chore/content-typo-cleanup
+
+Tag names
+- stable-2026-03-31
+- release-v1.2.0
+
+Commit messages
+- Reorder education items in about page
+- Fix contact page phone link formatting
+- Update footer address and call-to-action text
+
+==================================================
+6) One Copy-Paste Safe Routine
+==================================================
+
+Use this sequence for every new task:
+
+1. git checkout main
+2. git pull origin main
+3. git checkout -b feature/your-change-name
+4. npm run dev
+5. (make and test changes)
+6. git add .
+7. git commit -m "Describe your change"
+8. git push -u origin feature/your-change-name
+9. Open PR and test Vercel preview
+10. Merge to main only after preview is correct
+
+End of guide.

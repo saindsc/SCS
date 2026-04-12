@@ -81,7 +81,7 @@ export default function Header() {
           {/* CTA Buttons */}
           <div className="hidden md:flex md:items-center md:space-x-3">
             <Link
-              href="tel:+1234567890"
+              href="tel:+91 800 823 1699"
               className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors"
             >
               <Phone className="h-4 w-4" />

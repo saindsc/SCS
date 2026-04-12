@@ -1,0 +1,70 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Infertility and suicide prevention awareness illustration</title>
+  <desc id="desc">A support-themed awareness illustration with a headline, caring figures, and a ribbon symbol.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9F5EE"/>
+      <stop offset="1" stop-color="#F3EAE0"/>
+    </linearGradient>
+    <linearGradient id="circle" x1="520" y1="260" x2="1080" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2E6D84"/>
+      <stop offset="1" stop-color="#1D5062"/>
+    </linearGradient>
+    <linearGradient id="banner" x1="120" y1="690" x2="1480" y2="690" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101317"/>
+      <stop offset="1" stop-color="#1B232B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="800" cy="500" r="280" fill="url(#circle)"/>
+  <circle cx="800" cy="500" r="268" stroke="#EED9A3" stroke-width="6"/>
+
+  <path d="M640 500C640 470 665 445 700 445C735 445 760 468 800 520C840 468 865 445 900 445C935 445 960 470 960 500C960 565 900 610 800 680C700 610 640 565 640 500Z" fill="#E6C48A"/>
+  <path d="M800 438C782 400 767 371 760 345C753 319 758 302 776 296C795 290 810 301 822 330C834 301 849 290 868 296C886 302 891 319 884 345C877 371 862 400 844 438" fill="#B6CAD3"/>
+
+  <path d="M760 382C750 398 752 423 768 436C783 448 806 446 820 430C834 446 857 448 872 436C888 423 890 398 880 382C870 367 852 364 820 384C788 364 770 367 760 382Z" fill="#7A8C96"/>
+
+  <g fill="#E7B6A7">
+    <circle cx="350" cy="285" r="55"/>
+    <circle cx="1240" cy="290" r="55"/>
+    <circle cx="360" cy="560" r="55"/>
+    <circle cx="1240" cy="560" r="55"/>
+  </g>
+  <g fill="#5F4B3C">
+    <path d="M298 245C314 218 345 204 378 212C400 217 416 231 424 251C398 243 366 243 340 254C324 261 310 274 302 292C292 278 291 260 298 245Z"/>
+    <path d="M1188 250C1204 222 1236 208 1268 216C1291 221 1308 236 1316 256C1288 248 1257 248 1231 259C1213 266 1199 279 1192 297C1181 283 1181 265 1188 250Z"/>
+  </g>
+
+  <g>
+    <rect x="240" y="332" width="220" height="190" rx="20" fill="#F4E16D"/>
+    <path d="M300 392C332 363 370 363 402 392" stroke="#2E3B4E" stroke-width="18" stroke-linecap="round"/>
+    <path d="M276 438C318 468 382 468 424 438" stroke="#2E3B4E" stroke-width="16" stroke-linecap="round"/>
+    <text x="350" y="545" text-anchor="middle" font-family="Georgia, serif" font-size="44" font-weight="700" fill="#2D4356">ASK</text>
+  </g>
+
+  <g>
+    <rect x="1140" y="332" width="220" height="190" rx="20" fill="#B9B8FF"/>
+    <path d="M1190 405C1228 375 1273 375 1310 405" stroke="#2E3B4E" stroke-width="18" stroke-linecap="round"/>
+    <path d="M1178 450C1225 482 1277 482 1324 450" stroke="#2E3B4E" stroke-width="16" stroke-linecap="round"/>
+    <text x="1250" y="545" text-anchor="middle" font-family="Georgia, serif" font-size="38" font-weight="700" fill="#2D4356">ENCOURAGE</text>
+  </g>
+
+  <g>
+    <rect x="240" y="605" width="220" height="160" rx="20" fill="#F6CD5E"/>
+    <path d="M280 673C320 642 380 642 420 673" stroke="#2E3B4E" stroke-width="15" stroke-linecap="round"/>
+    <text x="350" y="748" text-anchor="middle" font-family="Georgia, serif" font-size="42" font-weight="700" fill="#2D4356">LISTEN</text>
+  </g>
+
+  <text x="800" y="455" text-anchor="middle" font-family="Georgia, serif" font-size="72" font-weight="700" fill="#F6E7BC">HERE FOR</text>
+  <text x="800" y="535" text-anchor="middle" font-family="Georgia, serif" font-size="72" font-weight="700" fill="#F6E7BC">YOU</text>
+
+  <rect x="120" y="650" width="1360" height="180" rx="20" fill="url(#banner)"/>
+  <rect x="140" y="675" width="18" height="130" fill="#CE2E2E"/>
+
+  <text x="180" y="728" font-family="Georgia, serif" font-size="44" font-weight="700" fill="#FFFFFF">Infertility is more than a medical issue.</text>
+  <text x="180" y="777" font-family="Georgia, serif" font-size="40" fill="#E9EDF2">It can impact mental health and increase suicide risk.</text>
+  <text x="180" y="819" font-family="Georgia, serif" font-size="40" fill="#E9EDF2">Break stigma. Start support.</text>
+
+  <text x="800" y="126" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#6B2D2D">WORLD SUICIDE PREVENTION DAY</text>
+</svg>

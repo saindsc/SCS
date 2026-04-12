@@ -32,8 +32,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 const services = servicesData.slice(0, 4);
 
 const stats = [
-  { value: '500+', label: 'Happy Clients', icon: Users },
-  { value: '15+', label: 'Years Experience', icon: Award },
+  { value: '1000+', label: 'Happy Clients', icon: Users },
+  { value: '8+', label: 'Years Experience', icon: Award },
   { value: '95%', label: 'Success Rate', icon: TrendingUp },
   { value: 'Online + In-Person', label: 'Flexible Sessions', icon: Clock },
 ];
@@ -43,28 +43,28 @@ const benefits = [
   'Confidential & Safe Environment',
   'Flexible Scheduling Options',
   'Evidence-Based Approaches',
-  'Affordable Insurance-Accepted Rates',
+  // 'Affordable Insurance-Accepted Rates',
   'Online & In-Person Sessions',
 ];
 
 const testimonials = [
   {
-    name: 'Sarah Johnson',
-    role: 'Individual Therapy Client',
-    content: 'The care and attention I received helped me through one of the darkest periods of my life. Forever grateful.',
+    name: 'Riya S.',
+    role: 'Anxiety Management',
+    content: 'Constant stress and sleeplessness made me miserable. These sessions gave me practical tools and a new perspective. Now I feel calm and in control.',
     rating: 5,
   },
   {
-    name: 'Michael Chen',
-    role: 'Couples Counseling Client',
-    content: 'Our therapist helped us rediscover what brought us together. Our relationship is stronger than ever.',
-    rating: 4.5,
+    name: 'Arjun & Neha',
+    role: 'Couples Therapy',
+    content: 'We were constantly arguing and not understanding each other. Therapy taught us how to listen properly. Now our relationship is much stronger.',
+    rating: 5,
   },
   {
-    name: 'Emily Davis',
-    role: 'Anxiety Treatment Client',
-    content: 'I learned practical tools to manage my anxiety. The techniques I learned have been life-changing.',
-    rating: 3.5,
+    name: 'Priya M.',
+    role: 'Mental Health Counseling',
+    content: 'Years of stress and work burnout made me forget myself. These sessions helped me understand self-care. Now my life is balanced again.',
+    rating: 5,
   },
 ];
 
@@ -144,10 +144,10 @@ export default function HomePage() {
                   <CheckCircle className="h-5 w-5 text-green-500" />
                   <span>100% Confidential</span>
                 </div>
-                <div className="flex items-center space-x-2 text-sm text-gray-600">
+                {/* <div className="flex items-center space-x-2 text-sm text-gray-600">
                   <CheckCircle className="h-5 w-5 text-green-500" />
                   <span>Insurance Accepted</span>
-                </div>
+                </div> */}
               </div>
             </motion.div>
 

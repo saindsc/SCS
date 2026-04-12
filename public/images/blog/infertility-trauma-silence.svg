@@ -1,0 +1,58 @@
+<svg width="1600" height="1600" viewBox="0 0 1600 1600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Infertility and trauma awareness poster</title>
+  <desc id="desc">A high-resolution poster-style illustration about infertility, trauma, and silent mental health suffering.</desc>
+  <defs>
+    <linearGradient id="bottomGlow" x1="800" y1="1070" x2="800" y2="1600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#140F0F"/>
+      <stop offset="1" stop-color="#7E1919"/>
+    </linearGradient>
+    <linearGradient id="panelA" x1="160" y1="360" x2="760" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F1EDE9"/>
+      <stop offset="1" stop-color="#DCD5CE"/>
+    </linearGradient>
+    <linearGradient id="panelB" x1="840" y1="360" x2="1440" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8ECE2"/>
+      <stop offset="1" stop-color="#EBDCCD"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1600" fill="#060707"/>
+  <rect x="0" y="1080" width="1600" height="520" fill="url(#bottomGlow)"/>
+
+  <rect x="1320" y="40" width="220" height="130" rx="8" fill="#D43630"/>
+  <text x="1430" y="124" text-anchor="middle" font-family="Georgia, serif" font-size="84" font-weight="700" fill="#FFFFFF">WOI</text>
+
+  <rect x="40" y="360" width="740" height="680" rx="16" fill="url(#panelA)"/>
+  <rect x="820" y="360" width="740" height="680" rx="16" fill="url(#panelB)"/>
+
+  <g>
+    <circle cx="285" cy="615" r="78" fill="#D1B7A6"/>
+    <path d="M214 562C238 520 296 503 338 528C368 545 386 576 386 611C351 593 308 593 273 612C249 626 230 650 221 678C203 646 201 597 214 562Z" fill="#6A4A39"/>
+    <path d="M195 922C218 807 292 742 390 731C488 742 562 807 585 922V970H195V922Z" fill="#8A5230"/>
+
+    <circle cx="460" cy="650" r="74" fill="#E2CABB"/>
+    <path d="M398 610C411 573 449 548 489 551C524 554 556 580 568 617C534 607 492 608 457 623C438 631 420 644 406 662C395 647 392 627 398 610Z" fill="#9A8A7C"/>
+    <path d="M326 932C341 826 404 758 488 747C572 758 635 826 650 932V970H326V932Z" fill="#F2F2F2"/>
+
+    <path d="M354 814C442 840 506 888 548 960" stroke="#E7EAF2" stroke-width="20" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <circle cx="1025" cy="615" r="78" fill="#CCB1A2"/>
+    <path d="M960 570C977 530 1019 505 1062 511C1097 516 1126 542 1137 577C1104 568 1063 569 1030 583C1010 591 993 604 979 621C966 606 962 585 960 570Z" fill="#5E382D"/>
+    <path d="M930 930C946 818 1014 748 1108 740C1202 748 1270 818 1286 930V970H930V930Z" fill="#F6F6F6"/>
+
+    <circle cx="1222" cy="650" r="74" fill="#E9CFC1"/>
+    <path d="M1162 615C1178 576 1213 552 1252 554C1287 556 1319 578 1332 610C1302 603 1264 603 1232 615C1213 622 1197 633 1184 648C1170 637 1162 625 1162 615Z" fill="#3F2C37"/>
+    <path d="M1110 930C1124 836 1180 774 1256 764C1332 774 1388 836 1402 930V970H1110V930Z" fill="#B7B8FF"/>
+
+    <path d="M1168 842C1098 835 1049 883 1014 962" stroke="#CDB6FF" stroke-width="18" stroke-linecap="round"/>
+    <rect x="1080" y="760" width="86" height="22" rx="8" fill="#F9F9FF" transform="rotate(18 1080 760)"/>
+  </g>
+
+  <rect x="95" y="1160" width="20" height="190" fill="#D53131"/>
+  <text x="145" y="1264" font-family="Georgia, serif" font-size="96" font-weight="700" fill="#F2EDB4">Infertility and Trauma:</text>
+  <text x="145" y="1365" font-family="Georgia, serif" font-size="78" fill="#FFFFFF">How Mental Health Suffers in Silence</text>
+
+  <text x="145" y="1460" font-family="Georgia, serif" font-size="40" fill="#E4E4E4">Awareness | Early support | Psychological care</text>
+</svg>
